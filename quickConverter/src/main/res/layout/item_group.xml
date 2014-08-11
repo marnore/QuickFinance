@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fbutton="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/padding_medium" >
+    <ImageView 
+        android:id="@+id/iv_group_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        />
+    <TextView
+        style="@style/GroupItemText"
+        android:id="@+id/text_group_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/iv_group_icon"
+        android:layout_marginLeft="@dimen/padding_large"
+        />
+    <info.hoang8f.widget.FButton
+        android:id="@+id/button_subgroup_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:focusable="false"
+        android:text="@string/sub_group"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        fbutton:buttonColor="@color/primary_bright"
+        fbutton:shadowColor="#ff898989"
+        fbutton:shadowEnabled="true"
+        fbutton:shadowHeight="2dp"
+        fbutton:cornerRadius="5dp"
+        />
+    <ImageView 
+        android:id="@+id/iv_subgroup_remove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:focusable="false"
+        android:src="@drawable/ic_delete"
+        />
+
+</RelativeLayout>

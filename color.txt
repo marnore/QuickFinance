@@ -1,0 +1,25 @@
+#e51c23
+#9c27b0
+ #3f51b5
+ #03a9f4
+ #009688
+ #8bc34a
+#ffeb3b
+#ff9800
+ #795548
+#607d8b
+ #e91e63
+#673ab7
+#5677fc
+#00bcd4
+#259b24
+#cddc39
+ #ffc107
+#ff5722
+ #9e9e9e
+
+Bright orange #ff9800
+Dark orange #f57c00
+
+
+http://jgilfelt.github.io/android-actionbarstylegenerator/#name=example&compat=appcompat&theme=light&actionbarstyle=solid&texture=0&hairline=1&neutralPressed=1&backColor=ff9800%2C100&secondaryColor=f57c00%2C100&tabColor=fff%2C100&tertiaryColor=F2F2F2%2C100&accentColor=ffe0b2%2C100&cabBackColor=FFFFFF%2C100&cabHighlightColor=f2f2f2%2C100

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item 
+        android:drawable="@drawable/income_pressed_bg"
+        android:state_pressed="true"/>
+    <item 
+        android:drawable="@drawable/income_pressed_bg"
+        android:state_focused="true"/>
+    
+    <item 
+        android:drawable="@drawable/income_selected_bg"
+        android:state_focused="false"
+        android:state_selected="true"
+        />
+
+
+</selector><!-- From: file:/media/marius/disk/Programinimas/Androidstudio/Quick%20Converter/quickConverter/src/main/res/drawable/income_list_selector.xml -->

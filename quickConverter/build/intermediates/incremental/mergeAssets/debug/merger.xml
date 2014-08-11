@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="2" >
+
+    <dataSet config="unspecified" >
+        <source path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/build/intermediates/exploded-aar/Quick Converter/nineOldAndroids/unspecified/assets" />
+    </dataSet>
+    <dataSet config="unspecified" >
+        <source path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/build/intermediates/exploded-aar/Quick Converter/pinchToClose/unspecified/assets" />
+    </dataSet>
+    <dataSet config="unspecified" >
+        <source path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/build/intermediates/exploded-aar/Quick Converter/superSaiyanScrollView/unspecified/assets" />
+    </dataSet>
+    <dataSet config="21.0.0-rc1" >
+        <source path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0-rc1/assets" />
+    </dataSet>
+    <dataSet config="unspecified" >
+        <source path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/build/intermediates/exploded-aar/Quick Converter/library/unspecified/assets" />
+    </dataSet>
+    <dataSet config="21.0.0-rc1" >
+        <source path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/build/intermediates/exploded-aar/com.android.support/palette-v7/21.0.0-rc1/assets" />
+    </dataSet>
+    <dataSet config="21.0.0-rc1" >
+        <source path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/21.0.0-rc1/assets" />
+    </dataSet>
+    <dataSet config="21.0.0-rc1" >
+        <source path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/build/intermediates/exploded-aar/com.android.support/cardview-v7/21.0.0-rc1/assets" />
+    </dataSet>
+    <dataSet config="20.0.0" >
+        <source path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/assets" />
+    </dataSet>
+    <dataSet config="main" >
+        <source path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets" >
+            <file
+                name="flags/aed.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/aed.png" />
+            <file
+                name="flags/afn.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/afn.png" />
+            <file
+                name="flags/all.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/all.png" />
+            <file
+                name="flags/amd.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/amd.png" />
+            <file
+                name="flags/ang.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/ang.png" />
+            <file
+                name="flags/aoa.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/aoa.png" />
+            <file
+                name="flags/ars.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/ars.png" />
+            <file
+                name="flags/aud.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/aud.png" />
+            <file
+                name="flags/awg.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/awg.png" />
+            <file
+                name="flags/azn.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/azn.png" />
+            <file
+                name="flags/bam.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/bam.png" />
+            <file
+                name="flags/bbd.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/bbd.png" />
+            <file
+                name="flags/bdt.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/bdt.png" />
+            <file
+                name="flags/bgn.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/bgn.png" />
+            <file
+                name="flags/bhd.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/bhd.png" />
+            <file
+                name="flags/bif.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/bif.png" />
+            <file
+                name="flags/bmd.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/bmd.png" />
+            <file
+                name="flags/bnd.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/bnd.png" />
+            <file
+                name="flags/bob.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/bob.png" />
+            <file
+                name="flags/brl.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/brl.png" />
+            <file
+                name="flags/bsd.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/bsd.png" />
+            <file
+                name="flags/bwp.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/bwp.png" />
+            <file
+                name="flags/byr.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/byr.png" />
+            <file
+                name="flags/bzd.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/bzd.png" />
+            <file
+                name="flags/cad.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/cad.png" />
+            <file
+                name="flags/cdf.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/cdf.png" />
+            <file
+                name="flags/chf.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/chf.png" />
+            <file
+                name="flags/clp.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/clp.png" />
+            <file
+                name="flags/cny.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/cny.png" />
+            <file
+                name="flags/cop.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/cop.png" />
+            <file
+                name="flags/crc.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/crc.png" />
+            <file
+                name="flags/cuc.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/cuc.png" />
+            <file
+                name="flags/cup.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/cup.png" />
+            <file
+                name="flags/cve.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/cve.png" />
+            <file
+                name="flags/czk.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/czk.png" />
+            <file
+                name="flags/djf.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/djf.png" />
+            <file
+                name="flags/dkk.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/dkk.png" />
+            <file
+                name="flags/dop.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/dop.png" />
+            <file
+                name="flags/dzd.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/dzd.png" />
+            <file
+                name="flags/egp.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/egp.png" />
+            <file
+                name="flags/ern.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/ern.png" />
+            <file
+                name="flags/eur.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/eur.png" />
+            <file
+                name="flags/fjd.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/fjd.png" />
+            <file
+                name="flags/fkp.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/fkp.png" />
+            <file
+                name="flags/gbp.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/gbp.png" />
+            <file
+                name="flags/gel.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/gel.png" />
+            <file
+                name="flags/ggp.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/ggp.png" />
+            <file
+                name="flags/ghs.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/ghs.png" />
+            <file
+                name="flags/gip.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/gip.png" />
+            <file
+                name="flags/gmd.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/gmd.png" />
+            <file
+                name="flags/gnf.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/gnf.png" />
+            <file
+                name="flags/gtq.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/gtq.png" />
+            <file
+                name="flags/gyd.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/gyd.png" />
+            <file
+                name="flags/hkd.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/hkd.png" />
+            <file
+                name="flags/hnl.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/hnl.png" />
+            <file
+                name="flags/hrk.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/hrk.png" />
+            <file
+                name="flags/htg.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/htg.png" />
+            <file
+                name="flags/huf.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/huf.png" />
+            <file
+                name="flags/idr.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/idr.png" />
+            <file
+                name="flags/ils.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/ils.png" />
+            <file
+                name="flags/imp.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/imp.png" />
+            <file
+                name="flags/omr.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/omr.png" />
+            <file
+                name="flags/pab.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/pab.png" />
+            <file
+                name="flags/pen.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/pen.png" />
+            <file
+                name="flags/pgk.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/pgk.png" />
+            <file
+                name="flags/php.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/php.png" />
+            <file
+                name="flags/pkr.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/pkr.png" />
+            <file
+                name="flags/pln.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/pln.png" />
+            <file
+                name="flags/prb.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/prb.png" />
+            <file
+                name="flags/pyg.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/pyg.png" />
+            <file
+                name="flags/qar.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/qar.png" />
+            <file
+                name="flags/ron.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/ron.png" />
+            <file
+                name="flags/rsd.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/rsd.png" />
+            <file
+                name="flags/rub.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/rub.png" />
+            <file
+                name="flags/rwf.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/rwf.png" />
+            <file
+                name="flags/sar.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/sar.png" />
+            <file
+                name="flags/sbd.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/sbd.png" />
+            <file
+                name="flags/scr.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/scr.png" />
+            <file
+                name="flags/sdg.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/sdg.png" />
+            <file
+                name="flags/sek.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/sek.png" />
+            <file
+                name="flags/sgd.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/sgd.png" />
+            <file
+                name="flags/shp.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/shp.png" />
+            <file
+                name="flags/sos.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/sos.png" />
+            <file
+                name="flags/srd.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/srd.png" />
+            <file
+                name="flags/ssp.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/ssp.png" />
+            <file
+                name="flags/std.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/std.png" />
+            <file
+                name="flags/svc.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/svc.png" />
+            <file
+                name="flags/syp.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/syp.png" />
+            <file
+                name="flags/szl.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/szl.png" />
+            <file
+                name="flags/thb.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/thb.png" />
+            <file
+                name="flags/tjs.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/tjs.png" />
+            <file
+                name="flags/tmt.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/tmt.png" />
+            <file
+                name="flags/tnd.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/tnd.png" />
+            <file
+                name="flags/top.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/top.png" />
+            <file
+                name="flags/try.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/try.png" />
+            <file
+                name="flags/ttd.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/ttd.png" />
+            <file
+                name="flags/twd.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/twd.png" />
+            <file
+                name="flags/tzs.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/tzs.png" />
+            <file
+                name="flags/uah.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/uah.png" />
+            <file
+                name="flags/ugx.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/ugx.png" />
+            <file
+                name="flags/usd.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/usd.png" />
+            <file
+                name="flags/uyu.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/uyu.png" />
+            <file
+                name="flags/uzs.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/uzs.png" />
+            <file
+                name="flags/vef.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/vef.png" />
+            <file
+                name="flags/vnd.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/vnd.png" />
+            <file
+                name="flags/vuv.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/vuv.png" />
+            <file
+                name="flags/wst.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/wst.png" />
+            <file
+                name="flags/xaf.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/xaf.png" />
+            <file
+                name="flags/xcd.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/xcd.png" />
+            <file
+                name="flags/xof.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/xof.png" />
+            <file
+                name="flags/xpf.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/xpf.png" />
+            <file
+                name="flags/yer.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/yer.png" />
+            <file
+                name="flags/zar.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/zar.png" />
+            <file
+                name="flags/zmw.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/zmw.png" />
+            <file
+                name="flags/zwl.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/zwl.png" />
+            <file
+                name="flags/btn.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/btn.png" />
+            <file
+                name="flags/etb.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/etb.png" />
+            <file
+                name="flags/inr.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/inr.png" />
+            <file
+                name="flags/lsl.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/lsl.png" />
+            <file
+                name="flags/nzd.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/nzd.png" />
+            <file
+                name="flags/sll.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/sll.png" />
+            <file
+                name="flags/iqd.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/iqd.png" />
+            <file
+                name="flags/irr.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/irr.png" />
+            <file
+                name="flags/isk.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/isk.png" />
+            <file
+                name="flags/jep.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/jep.png" />
+            <file
+                name="flags/jmd.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/jmd.png" />
+            <file
+                name="flags/jod.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/jod.png" />
+            <file
+                name="flags/jpy.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/jpy.png" />
+            <file
+                name="flags/kes.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/kes.png" />
+            <file
+                name="flags/kgs.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/kgs.png" />
+            <file
+                name="flags/khr.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/khr.png" />
+            <file
+                name="flags/kmf.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/kmf.png" />
+            <file
+                name="flags/kpw.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/kpw.png" />
+            <file
+                name="flags/krw.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/krw.png" />
+            <file
+                name="flags/kwd.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/kwd.png" />
+            <file
+                name="flags/kyd.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/kyd.png" />
+            <file
+                name="flags/kzt.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/kzt.png" />
+            <file
+                name="flags/lak.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/lak.png" />
+            <file
+                name="flags/lbp.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/lbp.png" />
+            <file
+                name="flags/lkr.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/lkr.png" />
+            <file
+                name="flags/lrd.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/lrd.png" />
+            <file
+                name="flags/ltl.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/ltl.png" />
+            <file
+                name="flags/lvl.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/lvl.png" />
+            <file
+                name="flags/lyd.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/lyd.png" />
+            <file
+                name="flags/mad.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/mad.png" />
+            <file
+                name="flags/mdl.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/mdl.png" />
+            <file
+                name="flags/mga.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/mga.png" />
+            <file
+                name="flags/mkd.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/mkd.png" />
+            <file
+                name="flags/mmk.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/mmk.png" />
+            <file
+                name="flags/mnt.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/mnt.png" />
+            <file
+                name="flags/mop.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/mop.png" />
+            <file
+                name="flags/mro.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/mro.png" />
+            <file
+                name="flags/mur.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/mur.png" />
+            <file
+                name="flags/mvr.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/mvr.png" />
+            <file
+                name="flags/mwk.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/mwk.png" />
+            <file
+                name="flags/mxn.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/mxn.png" />
+            <file
+                name="flags/myr.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/myr.png" />
+            <file
+                name="flags/mzn.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/mzn.png" />
+            <file
+                name="flags/nad.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/nad.png" />
+            <file
+                name="flags/ngn.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/ngn.png" />
+            <file
+                name="flags/nio.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/nio.png" />
+            <file
+                name="flags/nok.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/nok.png" />
+            <file
+                name="flags/npr.png"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/main/assets/flags/npr.png" />
+        </source>
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/quickConverter/src/debug/assets" />
+    </dataSet>
+
+</merger>

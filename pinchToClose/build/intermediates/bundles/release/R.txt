@@ -1,0 +1,3 @@
+int style SampleAppBaseTheme 0x7f020000
+int style SampleAppTheme 0x7f020001
+int style Transparent 0x7f020002

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Quick Converter.iml" filepath="$PROJECT_DIR$/Quick Converter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nineOldAndroids/nineOldAndroids.iml" filepath="$PROJECT_DIR$/nineOldAndroids/nineOldAndroids.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pinchToClose/pinchToClose.iml" filepath="$PROJECT_DIR$/pinchToClose/pinchToClose.iml" />
+      <module fileurl="file://$PROJECT_DIR$/quickConverter/quickConverter.iml" filepath="$PROJECT_DIR$/quickConverter/quickConverter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/superSaiyanScrollView/superSaiyanScrollView.iml" filepath="$PROJECT_DIR$/superSaiyanScrollView/superSaiyanScrollView.iml" />
+    </modules>
+  </component>
+</project>
+

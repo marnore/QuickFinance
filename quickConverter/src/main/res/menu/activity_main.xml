@@ -1,0 +1,29 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/menu_chart_pie"
+        android:visible="false"
+        android:title="@string/menu_show_pie_chart"
+        android:orderInCategory="99"
+        android:icon="@drawable/menu_pie_white"
+        app:showAsAction="always" />
+    <item android:id="@+id/menu_chart_line"
+        android:visible="false"
+        android:title="@string/menu_show_line_chart"
+        android:orderInCategory="98"
+        android:icon="@drawable/menu_chart_white"
+        app:showAsAction="always" />
+    
+    <item android:id="@+id/menu_export"
+        android:title="@string/menu_export_db"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+    <item android:id="@+id/menu_import"
+        android:title="@string/menu_import_db"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+    <item android:id="@+id/menu_curr_list"
+        android:title="@string/menu_curr_list"
+        android:icon="@drawable/menu_curr_icon_white"
+        android:orderInCategory="100"
+        app:showAsAction="always" />
+</menu>

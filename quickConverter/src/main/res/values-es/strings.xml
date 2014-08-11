@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Quick Finance</string>
+    <string name="menu_settings">Preferencias</string>
+    <string name="menu_export_db">Copia de seguridad</string>
+    <string name="menu_import_db">Importa base de datos</string>
+    <string name="save_before_replace">Esta acción sobreescribirá la actual base de datos. ¿Quieres guardar la base de datos actual antes de continuar?</string>
+    <string name="attention">Atención</string>
+    <string name="yes">Sí</string>
+    <string name="no">No</string>
+    <string name="menu_search">Buscar</string>
+    <string name="menu_show_line_chart">Muestra gráfica de líneas</string>
+    <string name="menu_show_pie_chart">Muestra gráfica circular</string>
+    <string name="menu_curr_list">Tus monedas</string>
+    <string name="menu_update_currencies">Actualiza monedas</string>
+    <string name="title_activity_main">Quick Finance</string>
+    <string name="pick_group_title">Introduce nuevo subgrupo:</string>
+    <string name="add_subgroup">Crear</string>
+    <string name="cancel">Cancelar</string>
+    <string name="group_title">Título del grupo</string>
+    <string name="choose_currency_for_chart">¿Qué moneda quieres usar para mostrar los datos?</string>
+    <string name="error_no_internet_on_startup"> Necesitas una conexión de internet para el primer uso. Conéctate a  internet y prueba otra vez.</string>
+    <string name="error_download_failed"> La descarga de los recursos iniciales falló. Por favor lanza la aplicación otra vez.</string>
+    <string name="error_group_exists">El grupo existe. Elige otro nombre para el grupo</string>
+    <string name="error_backup_db">La base de datos no pudo ser guardada.. No hay una tarjeta SD en tu dispositivo.</string>
+    <string name="success_backup_db">Base de datos guardada en fichero %1$s</string>
+    <string name="ok">OK</string>
+    <string name="please_add_currencies">Pulsa aquí para seleccionar las monedas que quieres usar.</string>
+    <string name="tab_currencies">Finanzas</string>
+    <string name="tab_statistics">Estadísticas</string>
+    <string name="tab_groups">Grupos</string>
+    <string name="tab_history">Historial</string>
+    <string name="tab_calculator">Calculadora</string>
+    <string name="tab_user_currencies">Mis monedas</string>
+    <string name="tab_all_currencies">Todas las monedas</string>
+    <string name="sub_group">Subgrupo</string>
+    <string name="search_currency">Buscar moneda…</string>
+    <string name="income">Ingresos</string>
+    <string name="expenses">Gastos</string>
+    <string name="select_db_to_import">¿Qué base de datos quieres usar?</string>
+    <string name="no_items_found">No se han encontrado datos</string>
+    <string name="legend">Leyenda</string>
+    <string name="chart_prev">Ant.</string>
+    <string name="chart_next">Sig.</string>
+    <string name="added_income">%3$s: Ingreso de %1$.2f %2$s</string>
+    <string name="added_expenses">%3$s: Gasto de %1$.2f %2$s</string>
+    <string name="expenses_short">Gast.</string>
+    <string name="income_short">Ingr.</string>
+    <string name="choose_your_currencies">Selecciona tus monedas</string>
+    <string name="save_changes">Guardar cambios</string>
+    <string name="dialog_delete">Eliminar</string>
+    <string name="dialog_cancel">Cancelar</string>
+    <string name="dialog_edit_history_title">Edita la entrada</string>
+    <string name="date_from">Desde:</string>
+    <string name="date_to">Hasta:</string>
+    <string name="select_groups">Selecciona grupos:</string>
+
+</resources>

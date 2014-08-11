@@ -1,0 +1,64 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="lt.marius.converter"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:versionCode="7"
+    android:versionName="Daikon" >
+
+    <uses-sdk
+        tools:node="replace"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    
+    <compatible-screens>
+        <!-- all small size screens -->
+        <screen android:screenSize="small" android:screenDensity="ldpi" />
+        <screen android:screenSize="small" android:screenDensity="mdpi" />
+        <screen android:screenSize="small" android:screenDensity="hdpi" />
+        <screen android:screenSize="small" android:screenDensity="xhdpi" />
+        <screen android:screenSize="small" android:screenDensity="480" />
+        <screen android:screenSize="small" android:screenDensity="213" />
+        <!-- all normal size screens -->
+        <screen android:screenSize="normal" android:screenDensity="ldpi" />
+        <screen android:screenSize="normal" android:screenDensity="mdpi" />
+        <screen android:screenSize="normal" android:screenDensity="hdpi" />
+        <screen android:screenSize="normal" android:screenDensity="xhdpi" />
+        <screen android:screenSize="normal" android:screenDensity="480" />
+        <screen android:screenSize="normal" android:screenDensity="213" />
+    </compatible-screens>
+    
+
+    <application
+        android:allowBackup="true"
+        android:name=".ConverterApp"
+        android:icon="@drawable/ic_launcher2"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main"
+            android:screenOrientation="user"
+            android:hardwareAccelerated="true"
+            android:windowSoftInputMode="adjustPan" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="lt.marius.converter.currselect.CurrSelectActivity"
+            android:parentActivityName="MainActivity"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="user"
+            android:label="@string/title_activity_main" >
+            
+        </activity>
+        <receiver
+            android:exported="false"
+            android:name="lt.marius.converter.network.NetworkStateProvider$ConnectivityBroadcastReceiver">
+        </receiver>
+    </application>
+
+</manifest>

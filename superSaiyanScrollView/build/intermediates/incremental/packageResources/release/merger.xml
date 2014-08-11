@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="2" >
+
+    <dataSet config="main" >
+        <source path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/superSaiyanScrollView/src/main/res" >
+            <file
+                name="fastscroll_thumb_holo"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/superSaiyanScrollView/src/main/res/drawable-mdpi/fastscroll_thumb_holo.xml"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="fastscroll_thumb_default_holo"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/superSaiyanScrollView/src/main/res/drawable-xhdpi/fastscroll_thumb_default_holo.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="fastscroll_thumb_pressed_holo"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/superSaiyanScrollView/src/main/res/drawable-xhdpi/fastscroll_thumb_pressed_holo.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/superSaiyanScrollView/src/main/res/drawable-xhdpi/ic_launcher.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="popup_full_bright"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/superSaiyanScrollView/src/main/res/drawable-xhdpi/popup_full_bright.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="popup_full_dark"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/superSaiyanScrollView/src/main/res/drawable-xhdpi/popup_full_dark.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="list_header"
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/superSaiyanScrollView/src/main/res/layout/list_header.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/superSaiyanScrollView/src/main/res/values/attrs.xml"
+                qualifiers="" >
+                <declare-styleable name="SuperSaiyanScrollView" >
+                    <attr
+                        name="ssjn_overlayWidth"
+                        format="dimension" />
+                    <attr
+                        name="ssjn_overlayHeight"
+                        format="dimension" />
+                    <attr
+                        name="ssjn_overlayTextSize"
+                        format="dimension" />
+                    <attr
+                        name="ssjn_overlayAutoWidth"
+                        format="boolean" />
+                    <attr name="ssjn_overlaySizeScheme" >
+                        <flag
+                            name="small"
+                            value="0" />
+                        <flag
+                            name="normal"
+                            value="1" />
+                        <flag
+                            name="large"
+                            value="2" />
+                        <flag
+                            name="xlarge"
+                            value="3" />
+                    </attr>
+                    <attr
+                        name="ssjn_overlayTextColor"
+                        format="color" />
+                </declare-styleable>
+            </file>
+            <file
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/superSaiyanScrollView/src/main/res/values/colors.xml"
+                qualifiers="" >
+                <color name="ssjn__emphasis" >#f57c00
+                </color>
+            </file>
+            <file
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/superSaiyanScrollView/src/main/res/values/dimens.xml"
+                qualifiers="" >
+                <dimen name="ssjn__overlay_text_size_normal" >24dp
+                </dimen>
+                <dimen name="ssjn__overlay_width_xlarge" >325dp
+                </dimen>
+                <dimen name="ssjn__overlay_text_size_xlarge" >15dp
+                </dimen>
+                <dimen name="ssjn__overlay_width_large" >325dp
+                </dimen>
+                <dimen name="ssjn__text_size_list_header" >17sp
+                </dimen>
+                <dimen name="ssjn__overlay_width_small" >75dp
+                </dimen>
+                <dimen name="ssjn__overlay_text_size_small" >26dp
+                </dimen>
+                <dimen name="ssjn__overlay_text_size_large" >24dp
+                </dimen>
+                <dimen name="ssjn__overlay_width_normal" >240dp
+                </dimen>
+                <dimen name="ssjn__overlay_height" >75dp
+                </dimen>
+            </file>
+            <file
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/superSaiyanScrollView/src/main/res/values/strings.xml"
+                qualifiers="" >
+                <string name="app_name" >SuperSaiyanScrollView
+                </string>
+            </file>
+            <file
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/superSaiyanScrollView/src/main/res/values/styles.xml"
+                qualifiers="" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Light" >
+
+                    <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+                    -->
+                </style>
+
+                <style
+                    name="AppTheme"
+                    parent="AppBaseTheme" >
+
+                    <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+                </style>
+            </file>
+            <file
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/superSaiyanScrollView/src/main/res/values-large/dimens.xml"
+                qualifiers="large-v4" >
+                <dimen name="ssjn__text_size_list_header" >24sp
+                </dimen>
+            </file>
+            <file
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/superSaiyanScrollView/src/main/res/values-v11/styles.xml"
+                qualifiers="v11" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light" >
+
+                    <!-- API 11 theme customizations can go here. -->
+                </style>
+            </file>
+            <file
+                path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/superSaiyanScrollView/src/main/res/values-v14/styles.xml"
+                qualifiers="v14" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light.DarkActionBar" >
+
+                    <!-- API 14 theme customizations can go here. -->
+                </style>
+            </file>
+        </source>
+        <source path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/superSaiyanScrollView/build/generated/res/rs/release" />
+        <source path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/superSaiyanScrollView/build/generated/res/generated/release" />
+    </dataSet>
+    <dataSet config="release" >
+        <source path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/superSaiyanScrollView/src/release/res" />
+    </dataSet>
+
+</merger>

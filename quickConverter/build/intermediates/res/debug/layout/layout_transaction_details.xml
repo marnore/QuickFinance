@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+<RelativeLayout
+    android:id="@+id/rl_transaction_details"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:background="#70445544"
+    android:layout_marginLeft="@dimen/padding_medium"
+    android:layout_marginRight="@dimen/padding_medium"
+    android:visibility="visible" >
+
+    <HorizontalScrollView
+        android:id="@+id/group_picker"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="@dimen/padding_small"
+         >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ll_group_picker"
+            android:orientation="horizontal" >
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <DatePicker
+        android:id="@+id/transaction_date"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/group_picker"
+        android:calendarViewShown="false" />
+
+</RelativeLayout>
+</FrameLayout><!-- From: file:/media/marius/disk/Programinimas/Androidstudio/Quick%20Converter/quickConverter/src/main/res/layout/layout_transaction_details.xml -->

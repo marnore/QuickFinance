@@ -1,0 +1,67 @@
+<resources>
+
+    <string name="app_name">Kelionių Finansai</string>
+    <string name="menu_settings">Nustatymai</string>
+    <string name="menu_export_db">Atsarginė duomenų kopija</string>
+    <string name="menu_import_db">Įkelti atsarginę kopiją</string>
+    <string name="save_before_replace">Jūsų dabartiniai duomenys bus perrašyti. Išsaugoti dabartinius duomenis prieš tęsiant?</string>
+    <string name="attention">Dėmesio</string>
+    <string name="yes">Taip</string>
+    <string name="no">Ne</string>
+    <string name="menu_search">Paieška</string>
+    <string name="menu_show_line_chart">Rodyti grafiką</string>
+    <string name="menu_show_pie_chart">Rodyti skritulinę diagramą</string>
+    <string name="menu_curr_list">Naudojamos valiutos</string>
+    <string name="menu_update_currencies">Update currencies</string>
+    <string name="title_activity_main">Quick Finance</string>
+    <string name="pick_group_title">Įveskite grupės pavadinimą:</string>
+    <string name="add_subgroup">Sukurti</string>
+    <string name="cancel">Atšaukti</string>
+	<string name="group_title">Grupė pavadinimas</string>
+	<string name="choose_currency_for_chart">Kuria valiuta rodyti statistiką?</string>
+	
+	
+	<string name="error_no_internet_on_startup">Naudojant programą pirmą kartą, būtinas inteneto ryšys. Prisijunkite prie interneto ir bandykite dar kartą.</string>
+	<string name="error_download_failed">Valiutų serveris nepasiekiamas. Bandykite paleisti programą iš naujo</string>
+	<string name="error_group_exists">Tokia grupė jau sukurta. Pasirinkite kitą pavadinimą?</string>
+	<string name="error_backup_db">Deja jūsų įrenginyje nėra išorinės atminties atsarginės kopijos išsaugojimui</string>
+	<string name="success_backup_db">Atsarginė kopija sukurta %1$s</string>
+	<string name="ok">Gerai</string>
+	<string name="please_add_currencies">Spauskite norėdami pasirinkti valiutas</string>
+	
+	<string name="tab_currencies">Finansai</string>
+	<string name="tab_statistics">Statistika</string>
+	<string name="tab_groups">Grupės</string>
+	<string name="tab_history">Istorija</string>
+	<string name="tab_calculator">Skaičiuoklė</string>
+	<string name="tab_user_currencies">Naudojamos valiutos</string>
+	<string name="tab_all_currencies">Visos valiutos</string>
+	<string name="sub_group">Pogrupis</string>
+	<string name="search_currency">Surasti valiutą…</string>
+	
+	<string name="income">Pajamos</string>
+	<string name="expenses">Išlaidos</string>
+	
+	<string name="select_db_to_import">Kurią atsarginę kopiją įkelti?</string>
+	<string name="no_items_found">Nieko nerasta</string>
+	
+	<string name="legend">Grupės</string>
+	<string name="chart_prev">Buvęs</string>
+	<string name="chart_next">Kitas</string>
+	
+	<string name="added_income">Gavote %1$.2f %2$s. Pridėta prie grupės %3$s</string>
+	<string name="added_expenses">Išleidote %1$.2f %2$s. Pridėta prie grupės %3$s</string>
+	<string name="expenses_short">Išl.</string>
+	<string name="income_short">Paj.</string>
+	
+	<string name="choose_your_currencies">Pasirinkite valiutas</string>
+	<string name="save_changes">Išsaugoti pakeitimus</string>
+	
+	<string name="dialog_delete">Ištrinti</string>
+	<string name="dialog_cancel">Atšaukti</string>
+	<string name="dialog_edit_history_title">Redaguoti įrašą:</string>
+	
+	<string name="date_from">Nuo:</string>
+	<string name="date_to">Iki:</string>
+	<string name="select_groups">Pasirinkite grupes:</string>
+</resources>

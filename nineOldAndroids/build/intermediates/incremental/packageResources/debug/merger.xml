@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="2" >
+
+    <dataSet config="main" >
+        <source path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/nineOldAndroids/src/main/res" />
+        <source path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/nineOldAndroids/build/generated/res/rs/debug" />
+        <source path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/nineOldAndroids/build/generated/res/generated/debug" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="/media/marius/disk/Programinimas/Androidstudio/Quick Converter/nineOldAndroids/src/debug/res" />
+    </dataSet>
+
+</merger>

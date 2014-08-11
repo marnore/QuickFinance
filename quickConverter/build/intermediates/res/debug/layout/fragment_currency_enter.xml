@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingTop="@dimen/padding_medium"
+        android:paddingBottom="@dimen/padding_medium"
+         >
+
+        <lt.marius.converter.views.BorderedImageView
+            android:id="@+id/iv_country_flag"
+            android:layout_width="48dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_action_search" />
+
+        <EditText
+            style="@style/EditText"
+            android:id="@+id/edit_currency_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_small"
+            android:layout_marginRight="@dimen/padding_small"
+            android:layout_toLeftOf="@+id/button_store_value"
+            android:layout_toRightOf="@+id/iv_country_flag"
+            android:layout_centerVertical="true"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:inputType="numberDecimal"
+            android:selectAllOnFocus="true" >
+        </EditText>
+
+        <ImageButton
+            style="@style/ButtonFlat"
+            android:id="@+id/button_store_value"
+            android:layout_width="48dp"
+            android:layout_height="42dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/button_spend_value"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_income" />
+
+        <ImageButton
+            style="@style/ButtonFlat"
+            android:id="@+id/button_spend_value"
+            android:layout_width="48dp"
+            android:layout_height="42dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_spend"
+             />
+    </RelativeLayout>
+
+</LinearLayout><!-- From: file:/media/marius/disk/Programinimas/Androidstudio/Quick%20Converter/quickConverter/src/main/res/layout/fragment_currency_enter.xml -->

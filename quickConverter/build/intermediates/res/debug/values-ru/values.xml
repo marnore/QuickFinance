@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- From: file:/media/marius/disk/Programinimas/Androidstudio/Quick%20Converter/quickConverter/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values-ru/values.xml -->
+    <eat-comment />
+
+    <string name="abc_action_bar_home_description" msgid="4600421777120114993">"Перейти на главный экран"</string>
+    <string name="abc_action_bar_up_description" msgid="1594238315039666878">"Перейти вверх"</string>
+    <string name="abc_action_menu_overflow_description" msgid="3588849162933574182">"Другие параметры"</string>
+    <string name="abc_action_mode_done" msgid="4076576682505996667">"Готово"</string>
+    <string name="abc_activity_chooser_view_see_all" msgid="7468859129482906941">"Показать все"</string>
+    <string name="abc_activitychooserview_choose_application" msgid="2031811694353399454">"Выбрать приложение"</string>
+    <string name="abc_searchview_description_clear" msgid="3691816814315814921">"Удалить запрос"</string>
+    <string name="abc_searchview_description_query" msgid="2550479030709304392">"Поисковый запрос"</string>
+    <string name="abc_searchview_description_search" msgid="8264924765203268293">"Поиск"</string>
+    <string name="abc_searchview_description_submit" msgid="8928215447528550784">"Отправить запрос"</string>
+    <string name="abc_searchview_description_voice" msgid="893419373245838918">"Голосовой поиск"</string>
+    <string name="abc_shareactionprovider_share_with" msgid="3421042268587513524">"Открыть доступ"</string>
+    <string name="abc_shareactionprovider_share_with_application" msgid="7165123711973476752">"Открыть доступ пользователю %s"</string>
+    <!-- From: file:/media/marius/disk/Programinimas/Androidstudio/Quick%20Converter/quickConverter/src/main/res/values-ru/strings.xml -->
+    <eat-comment />
+
+    <string name="add_subgroup">Создать</string>
+    <string name="added_expenses">Потрачено %1$.2f %2$s на %3$s</string>
+    <string name="added_income">Получено %1$.2f %2$s от %3$s</string>
+    <string name="app_name">Мои финансы</string>
+    <string name="attention">Внимание</string>
+    <string name="cancel">Отмена</string>
+    <string name="chart_next">Пред.</string>
+    <string name="chart_prev">След.</string>
+    <string name="choose_currency_for_chart">Какую валюту использовать для отображения данных?</string>
+    <string name="choose_your_currencies">Выберите ваши валюты</string>
+    <string name="date_from">От:</string>
+    <string name="date_to">До:</string>
+    <string name="dialog_cancel">Отмена</string>
+    <string name="dialog_delete">Удалить</string>
+    <string name="dialog_edit_history_title">Отредактировать историю записей:</string>
+    <string name="error_backup_db">Невозможно сохранить базу данных. Отсутствует внешний хранитель (или SD карта) на вашем устройстве.</string>
+    <string name="error_download_failed">Загрузка файлов для приложения не удалась. Перезагрузите приложение.</string>
+    <string name="error_group_exists">Данная группа уже существует. Выберите другое имя группы.</string>
+    <string name="error_no_internet_on_startup">Вам необходимо интернет соединение в течение первого запуска приложения. Подключитесь к интернету и повторите попытку.</string>
+    <string name="expenses">Расход</string>
+    <string name="expenses_short">Расход</string>
+    <string name="group_title">Название группы</string>
+    <string name="income">Доход</string>
+    <string name="income_short">Доход</string>
+    <string name="legend">Надпись</string>
+    <string name="menu_curr_list">Ваши валюты</string>
+    <string name="menu_export_db">Выгрузить базу данных на внешний хранитель</string>
+    <string name="menu_import_db">Импортировать базу данных с внешнего носителя</string>
+    <string name="menu_search">Поиск</string>
+    <string name="menu_settings">Настройки</string>
+    <string name="menu_show_line_chart">Показать линейный график</string>
+    <string name="menu_show_pie_chart">Показать круговую диаграмму</string>
+    <string name="menu_update_currencies">Обновить валюты</string>
+    <string name="no">Нет</string>
+    <string name="no_items_found">Поиск не дал результатов</string>
+    <string name="ok">Готово</string>
+    <string name="pick_group_title">Добавить новую подгруппу</string>
+    <string name="please_add_currencies">Нажмите здесь, чтобы выбрать валюты, которые вы хотите использовать</string>
+    <string name="save_before_replace">Это перезапишет текущие данные. Сохранить текущую базу перед этим?</string>
+    <string name="save_changes">Сохранить изменения</string>
+    <string name="search_currency">Найти валюту…</string>
+    <string name="select_db_to_import">Какую базу данных использовать?</string>
+    <string name="select_groups">Выберите группы:</string>
+    <string name="sub_group">Подгруппа</string>
+    <string name="success_backup_db">База данных сохранена в файле %1$s</string>
+    <string name="tab_all_currencies">Все валюты</string>
+    <string name="tab_calculator">Калькулятор</string>
+    <string name="tab_currencies">Финансы</string>
+    <string name="tab_groups">Группы</string>
+    <string name="tab_history">История</string>
+    <string name="tab_statistics">Статистика</string>
+    <string name="tab_user_currencies">Мои валюты</string>
+    <string name="title_activity_main">Мои финансы</string>
+    <string name="yes">Да</string>
+
+</resources>

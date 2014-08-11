@@ -1,0 +1,68 @@
+<resources>
+
+    <string name="app_name">Quick Finance</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_export_db">Backup database to ext. storage</string>
+    <string name="menu_import_db">Import database from ext. storage</string>
+    <string name="save_before_replace">This will replace your current data. Save the current database before proceeding?</string>
+    <string name="attention">Attention</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="menu_search">Search</string>
+    <string name="menu_show_line_chart">Show line chart</string>
+    <string name="menu_show_pie_chart">Show pie chart</string>
+    <string name="menu_curr_list">Your currencies</string>
+    <string name="menu_update_currencies">Update currencies</string>
+    <string name="title_activity_main">Quick Finance</string>
+    <string name="pick_group_title">Enter new subgroup:</string>
+    <string name="add_subgroup">Create</string>
+    <string name="cancel">Cancel</string>
+	<string name="group_title">Group title</string>
+	<string name="choose_currency_for_chart">Which currency to use for displaying data?</string>
+	
+	<string name="error_no_internet_on_startup">You need to have an Internet connection during the first application launch. Connect to the Internet and try again.</string>
+	<string name="error_download_failed">Download of initial resources failed. Please re-run the app</string>
+	<string name="error_group_exists">Group already exists. Choose another group name</string>
+	<string name="error_backup_db">Database cannot be saved. No external storage (or SD card) on your device.</string>
+	<string name="success_backup_db">Database saved to file %1$s</string>
+	<string name="ok">OK</string>
+	<string name="please_add_currencies">Tap here to select currencies you want to use</string>
+	
+	<string name="tab_currencies">Finance</string>
+	<string name="tab_statistics">Statistics</string>
+	<string name="tab_groups">Groups</string>
+	<string name="tab_history">History</string>
+	<string name="tab_calculator">Calculator</string>
+	<string name="tab_user_currencies">My currencies</string>
+	<string name="tab_all_currencies">All currencies</string>
+	<string name="sub_group">Sub group</string>
+	<string name="search_currency">Search currency…</string>
+	
+	<string name="income">Income</string>
+	<string name="expenses">Expenses</string>
+	
+	<string name="select_db_to_import">Which database to use?</string>
+	<string name="no_items_found">No items found</string>
+	
+	<string name="legend">Legend</string>
+	<string name="chart_prev">Previous</string>
+	<string name="chart_next">Next</string>
+	
+	<string name="added_income">Received %1$.2f %2$s from %3$s</string>
+	<string name="added_expenses">Spent %1$.2f %2$s on %3$s</string>
+	<string name="expenses_short">Exp.</string>
+	<string name="income_short">Inc.</string>
+	
+	<string name="choose_your_currencies">Choose your currencies</string>
+	<string name="save_changes">Save changes</string>
+	
+	<string name="dialog_delete">Delete</string>
+	<string name="dialog_cancel">Cancel</string>
+	<string name="dialog_edit_history_title">Edit history record:</string>
+	
+	<string name="date_from">From:</string>
+	<string name="date_to">To:</string>
+	<string name="select_groups">Select groups:</string>
+	
+	<string name="showcase_currencies">Tap here download the currencies and select the ones that you will use</string>
+</resources>

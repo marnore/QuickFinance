@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomChart">
+		<attr name="android:color"/>
+		<attr name="icon_active" format="integer"/>
+		<attr name="icon_inactive_disabled" format="integer"/>
+		<attr name="icon_active_disabled" format="integer"/>
+	</declare-styleable>
+</resources>
