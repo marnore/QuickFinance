@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.Gravity;
+import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.ScaleGestureDetector.OnScaleGestureListener;
 import android.widget.FrameLayout;
@@ -76,15 +77,58 @@ public class Chart extends FrameLayout {
         paddingRight = UIUtils.dpToPx(8, getContext());
         paddingTop = UIUtils.dpToPx(8, getContext());
         paddingBottom = UIUtils.dpToPx(2, getContext());
+
+        MOVE_THRESHOLD = UIUtils.dpToPx(20, getContext());
 	}
-	
-//	@Override
-//	public boolean onTouchEvent(MotionEvent event) {
-//		return scaleDetector.onTouchEvent(event);
-//	}
 
+    private float sx, sy, dx, dy;
+    private boolean canClick;
 
-	private ScaleGestureDetector scaleDetector;
+    private float MOVE_THRESHOLD;
+
+	@Override
+	public boolean onTouchEvent(MotionEvent event) {
+        scaleDetector.onTouchEvent(event);
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                sx = event.getX();
+                sy = event.getY();
+                canClick = true;
+                break;
+            case MotionEvent.ACTION_MOVE:
+                if (canClick) {
+                    dx = event.getX() - sx;
+                    dy = event.getY() - sy;
+                    if (dx > MOVE_THRESHOLD || dy > MOVE_THRESHOLD) {
+                        canClick = false;
+                    }
+                }
+                break;
+            case MotionEvent.ACTION_UP:
+                if (canClick) {
+                    dx = event.getX() - sx;
+                    dy = event.getY() - sy;
+                    if (dx <= MOVE_THRESHOLD || dy <= MOVE_THRESHOLD) {
+                        performClick();
+                    }
+                }
+                break;
+            case MotionEvent.ACTION_CANCEL:
+                canClick = false;
+        }
+        if (scaleDetector.isInProgress()) {
+            canClick = false;
+        }
+        return true;
+	}
+
+    @Override
+    public boolean onInterceptTouchEvent(MotionEvent event) {
+//        scaleDetector.onTouchEvent(event);
+        return false;
+    }
+
+    private ScaleGestureDetector scaleDetector;
 	private float scaleFactor = 1;
 	
 	private Axis xAxis;

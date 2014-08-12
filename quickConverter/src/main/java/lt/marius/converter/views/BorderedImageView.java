@@ -10,6 +10,8 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
+import java.util.Arrays;
+
 /**
  * Created by marius on 8/2/14.
  */
@@ -48,7 +50,10 @@ public class BorderedImageView extends ImageView {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        bounds = null;
+    }
 
+    private void computeBounds() {
         // Get image matrix values and place them in an array
         float[] f = new float[9];
         getImageMatrix().getValues(f);
@@ -65,20 +70,24 @@ public class BorderedImageView extends ImageView {
         // Calculate the actual dimensions
         actW = Math.round(origW * scaleX);
         actH = Math.round(origH * scaleY);
+
+        int measuredH = getMeasuredHeight();
+        int measuredW = getMeasuredWidth();
+
         bounds = new RectF();
-        bounds.top = (getMeasuredHeight() - actH) / 2.f + 1;
+        bounds.top = (measuredH - actH) / 2.f + 1;
         bounds.bottom = bounds.top + actH - 1;
-        bounds.left = (getMeasuredWidth() - actW) / 2.f + 1;
+        bounds.left = (measuredW - actW) / 2.f + 1;
         bounds.right = bounds.left + actW - 1;
     }
 
         @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        if (bounds != null) {
-            canvas.drawRect(bounds, paint);
-        }
 
-//        canvas.drawRect(1, 1, getMeasuredWidth() - 1, getMeasuredHeight() - 1, paint);
+        if (bounds == null) {
+            computeBounds();
+        }
+        canvas.drawRect(bounds, paint);
     }
 }

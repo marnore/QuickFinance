@@ -245,6 +245,7 @@ public class ChartFragment extends Fragment implements SeriesFragment.SeriesFrag
                 incShowing = !incShowing;
             }
             setShowing(expShowing, incShowing);
+
             if (expShowing) {
                 showedType |= TYPE_EXPENSES;
             } else {
@@ -255,7 +256,28 @@ public class ChartFragment extends Fragment implements SeriesFragment.SeriesFrag
             } else {
                 showedType &= ~TYPE_INCOME;
             }
-            refresh();
+
+            if (mChart != null) {
+                mChart.clearSeries();
+                ChartController controller = new ChartController(getActivity().getApplicationContext());
+                float res = 0;
+                if (showedType == (TYPE_EXPENSES | TYPE_INCOME)) {
+                    mChart.addSeries(seriesExp);
+                    mChart.addSeries(seriesInc);
+                    res = Math.max(controller.getMaximumY(seriesExp), controller.getMaximumY(seriesInc));
+                } else if (showedType == TYPE_EXPENSES) {
+                    mChart.addSeries(seriesExp);
+                    res = controller.getMaximumY(seriesExp);
+                } else if (showedType == TYPE_INCOME) {
+                    mChart.addSeries(seriesInc);
+                    res = controller.getMaximumY(seriesInc);
+                }
+                Axis ya = new YAxis(0, Math.max(50, res / 5 * 5 + 5), 5, getActivity());
+                mChart.setYAxis(ya);
+                mChart.invalidate();
+            } else {
+                refresh();  //safety
+            }
         }
 
     };
@@ -388,14 +410,11 @@ public class ChartFragment extends Fragment implements SeriesFragment.SeriesFrag
 			
 			try {
                 seriesExp = seriesInc = null;
-				if ((showedType & TYPE_EXPENSES) == TYPE_EXPENSES) {
-					seriesExp = new CombinedSeries2D(
-                            controller.getDailyExpenses(month, year, showedCurrency, null));
-				}
-                if ((showedType & TYPE_INCOME) == TYPE_INCOME){
-					seriesInc = new CombinedSeries2D(
-                            controller.getDailyIncome(month, year, showedCurrency, null));
-				}
+
+                seriesExp = new CombinedSeries2D(
+                        controller.getDailyExpenses(month, year, showedCurrency, null));
+                seriesInc = new CombinedSeries2D(
+                        controller.getDailyIncome(month, year, showedCurrency, null));
 			} catch (IllegalStateException ex) {
 				DatabaseUtils.closeDatabase();
 				DatabaseUtils.initDatabse(getActivity().getApplicationContext());
@@ -429,10 +448,11 @@ public class ChartFragment extends Fragment implements SeriesFragment.SeriesFrag
 	    		mChart.clearSeries();
 				mChart.setYAxis(ya);
 	    		mChart.setXAxis(xa);
-				if (seriesExp != null) {
+
+				if (seriesExp != null && (showedType & TYPE_EXPENSES) == TYPE_EXPENSES) {
                     mChart.addSeries(seriesExp);
 				}
-                if (seriesInc != null) {
+                if (seriesInc != null && (showedType & TYPE_INCOME) == TYPE_INCOME) {
                     mChart.addSeries(seriesInc);
                 }
 //				mChart.showLegend(false);

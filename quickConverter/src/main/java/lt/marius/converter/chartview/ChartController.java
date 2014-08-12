@@ -207,7 +207,7 @@ public class ChartController {
                 periodExpenses += s.getPointsY()[i];
             }
         }
-        periodIncome = getGroupMonthSum(year, month, tgc.getDefaultIncomeGroup(), currency);
+//        periodIncome = getGroupMonthSum(year, month, tgc.getDefaultIncomeGroup(), currency);
         return series;
 	}
 	
@@ -234,7 +234,7 @@ public class ChartController {
                 periodIncome += s.getPointsY()[i];
             }
         }
-        periodExpenses = -getGroupMonthSum(year, month, tgc.getDefaultExpensesGroup(), currency);
+//        periodExpenses = -getGroupMonthSum(year, month, tgc.getDefaultExpensesGroup(), currency);
         return series;
 	}
 	
