@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:top="-6dp" android:left="-7dp" android:right="-7dp">
-        <shape xmlns:android="http://schemas.android.com/apk/res/android">
-            <solid android:color="#00000000"/>
-            <stroke android:color="#ff6a6a6a" android:width="0.5dp"/>
-        </shape>
-    </item>
-</layer-list><!-- From: file:/media/marius/disk/Programinimas/Androidstudio/Quick%20Converter/quickConverter/src/main/res/drawable/edit_text_bg_normal.xml -->

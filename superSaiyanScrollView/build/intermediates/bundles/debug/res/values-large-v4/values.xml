@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-
-    <!-- From: file:/media/marius/disk/Programinimas/Androidstudio/Quick%20Converter/superSaiyanScrollView/src/main/res/values-large/dimens.xml -->
-    <eat-comment />
-
-    <dimen name="ssjn__text_size_list_header">24sp</dimen>
-
-</resources>
