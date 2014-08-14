@@ -26,7 +26,7 @@ public abstract class Series {
 	public void setPaint(Paint paint) {
 		this.paint = new Paint(paint);
 	}
-	
+
 	public int getColor() {
 		return paint.getColor();
 	}

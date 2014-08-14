@@ -22,19 +22,27 @@ public class EditTextDialog extends DialogFragment {
     }
 
 	private NoticeDialogListener listener;
-	private String title;
-	private String hint;
+	private String title = "";
+	private String hint = "";
+    private String value = "";
 	
 	public void setParameters(String title, String hint) {
 		this.hint = hint;
 		this.title = title;
 	}
+
+    public void setParameters(String title, String hint, String value) {
+        this.hint = hint;
+        this.title = title;
+        this.value = value;
+    }
 	
 	@Override
 	public void onSaveInstanceState(Bundle bundle) {
 		bundle.putBoolean("dismiss", true);	//FIXME so far just dismiss it since it is tricky to save state listener
 		bundle.putString("title", title);
 		bundle.putString("hint", hint);
+        bundle.putString("value", value);
 		super.onSaveInstanceState(bundle);
 	}
 	
@@ -61,6 +69,7 @@ public class EditTextDialog extends DialogFragment {
         int p = UIUtils.dpToPx(10.f, getActivity());
         edit.setPadding(p, p, p, p);
         edit.setHint(hint);
+        edit.setText(value);
         edit.setInputType(InputType.TYPE_TEXT_FLAG_CAP_WORDS);
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
         		LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);

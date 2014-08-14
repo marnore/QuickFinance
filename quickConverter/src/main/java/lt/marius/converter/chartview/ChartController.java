@@ -53,6 +53,7 @@ public class ChartController {
 	}
 	
 	public ChartController(Context applicationContext) {
+        SERIES_PAINT.setStrokeWidth(UIUtils.dpToPx(2.5f, applicationContext));
         context = applicationContext;
 		currencyStoreDao = DatabaseUtils.getHelper().getCachedDao(CurrencyStored.class);
 		currencyDao = DatabaseUtils.getHelper().getCachedDao(Currency.class);

@@ -22,7 +22,7 @@ public class CombinedSeries2D extends Series2D {
         }
         if (series.size() > 0) {
             setPointsX(series.get(0).getPointsX());
-            setColor(series.get(0).getColor());
+            setPaint(series.get(0).getPaint());
             recalculate();
         }
      }

@@ -35,8 +35,12 @@ import lt.marius.converter.utils.DividerItemDecoration;
  */
 public class SeriesFragment extends DialogFragment {
 
-    public static final String GROUP_PARENT_IDS = "group_parent_id";
-    public static final String INITIAL_CHECHKED_STATE = "initial_checked_state";
+
+    public static final String EXPENSES_GROUPS_IDS = "EXPENSES_GROUPS_IDS";
+    public static final String EXPENSES_CHECKED_STATE = "EXPENSES_CHECKED_STATE";
+    public static final String INCOME_GROUPS_IDS = "INCOME_GROUPS_IDS";
+    public static final String INCOME_CHECKED_STATE = "INCOME_CHECKED_STATE";
+
 
     public SeriesFragment() {}
 
@@ -59,23 +63,53 @@ public class SeriesFragment extends DialogFragment {
         recycler.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         recycler.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL_LIST));
-        int[] parentIds = getArguments().getIntArray(GROUP_PARENT_IDS);
+        int[] expIds = getArguments().getIntArray(EXPENSES_GROUPS_IDS);
+        int[] incIds = getArguments().getIntArray(INCOME_GROUPS_IDS);
+        boolean[] expChecks = getArguments().getBooleanArray(EXPENSES_CHECKED_STATE);
+        boolean[] incChecks = getArguments().getBooleanArray(INCOME_CHECKED_STATE);
+
 
         RuntimeExceptionDao<TransactionsGroup, Integer> dao
                 = DatabaseUtils.getHelper().getCachedDao(TransactionsGroup.class);
-        List<TransactionsGroup> items = null;
+        List<TransactionsGroup> items = new ArrayList<TransactionsGroup>();
+
+        List<Boolean> checks = new ArrayList<Boolean>();
+        for (int i = 0; expChecks != null && i < expChecks.length; i++) {
+            checks.add(expChecks[i]);
+        }
+        for (int i = 0; incChecks != null && i < incChecks.length; i++) {
+            checks.add(incChecks[i]);
+        }
+
         List<Integer> list = new ArrayList<Integer>();
-        for (int i = 0; i < parentIds.length; i++) {
-            list.add(parentIds[i]);
+        for (int i = 0; expIds != null && i < expIds.length; i++) {
+            list.add(expIds[i]);
         }
         try {
-            items = dao.queryBuilder().where().in(TransactionsGroup.GROUP_ID, list).query();
+            List<TransactionsGroup> lst = dao.queryBuilder().where().in(TransactionsGroup.GROUP_ID, list).query();
+            if (lst != null) {
+                items.addAll(lst);
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        list.clear();
+        for (int i = 0; incIds != null && i < incIds.length; i++) {
+            list.add(incIds[i]);
+        }
+        try {
+            List<TransactionsGroup> lst = dao.queryBuilder().where().in(TransactionsGroup.GROUP_ID, list).query();
+            if (lst != null) {
+                items.addAll(lst);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
         // specify an adapter (see also next example)
         if (items != null) {
-            mAdapter = new ItemsAdapter(items, getArguments().getBooleanArray(INITIAL_CHECHKED_STATE));
+            mAdapter = new ItemsAdapter(items, checks);
         }
         recycler.setAdapter(mAdapter);
 
@@ -120,14 +154,14 @@ public class SeriesFragment extends DialogFragment {
     private static class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> {
 
         private List<TransactionsGroup> items;
-        private boolean[] checkedItems;
+        private List<Boolean> checkedItems;
         private SeriesFragmentCallback listener;
 
-        public ItemsAdapter(List<TransactionsGroup> items, boolean[] initialStates) {
+        public ItemsAdapter(List<TransactionsGroup> items, List<Boolean> initialStates) {
             this.items = items;
-            checkedItems = new boolean[items.size()];
-            for (int i = 0; i < checkedItems.length; i++) {
-                checkedItems[i] = initialStates == null || initialStates[i];
+            checkedItems = new ArrayList<Boolean>();
+            for (Boolean state : initialStates) {
+                checkedItems.add(initialStates == null || state);
             }
         }
 
@@ -165,7 +199,7 @@ public class SeriesFragment extends DialogFragment {
             viewHolder.flagImage.setImageBitmap(BitmapFactory.decodeFile(g.getImagePath()));
             viewHolder.currencyTitle.setText(g.getName());
             viewHolder.checkBox.setOnCheckedChangeListener(null);
-            viewHolder.checkBox.setChecked(checkedItems[i]);
+            viewHolder.checkBox.setChecked(checkedItems.get(i));
             viewHolder.checkBox.setTag(viewHolder);
             viewHolder.checkBox.setOnCheckedChangeListener(checkListener);
             viewHolder.view.setTag(viewHolder);

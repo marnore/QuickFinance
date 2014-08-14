@@ -108,6 +108,20 @@ public class GroupsController {
 	public void populateView(ViewGroup container) {
 		ListView list = (ListView) container.findViewById(R.id.list_groups);
 		list.setAdapter(listAdapter);
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (manager != null) {
+                    pendingGroup = views.get(position).getModel();
+                    dialog = new EditTextDialog();
+                    dialog.setParameters(context.getString(R.string.pick_group_title),
+                            context.getString(R.string.group_title), pendingGroup.getName());
+                    dialog.setListener(editDialogListener);
+                    dialog.show(manager, "EditTextDialog");
+                }
+
+            }
+        });
 //		list.setOnItemLongClickListener(listLongClickListener);
 	}
 	
@@ -191,7 +205,8 @@ public class GroupsController {
 				pendingGroup = null;
 				return;
 			}
-			if (TransactionsGroupsController.getInstance().groupExists(text)) {
+            TransactionsGroup gr = TransactionsGroupsController.getInstance().getGroup(text);
+			if (gr != null && !gr.isRemoved()) {
 				UIUtils.showOkDialog(dialog.getActivity(), "", context.getString(R.string.error_group_exists));
 				return;
 			}
@@ -224,7 +239,24 @@ public class GroupsController {
 		public void onDialogNegativeClick() {
 			pendingGroup = null;
 		}
-	}; 
+	};
+
+    private NoticeDialogListener editDialogListener = new NoticeDialogListener() {
+
+        @Override
+        public void onDialogPositiveClick(String text) {
+            if (pendingGroup != null) {
+                pendingGroup.setName(text);
+                TransactionsGroupsController.getInstance().saveChanges(pendingGroup);
+                if (listAdapter != null) listAdapter.notifyDataSetChanged();
+            }
+        }
+
+        @Override
+        public void onDialogNegativeClick() {
+
+        }
+    };
 	
 	private EditTextDialog dialog;
 	public void onSubGroupAdd(TransactionsGroup group) {

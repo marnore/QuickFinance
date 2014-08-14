@@ -420,9 +420,14 @@ public class ChartFragment extends Fragment implements SeriesFragment.SeriesFrag
 				DatabaseUtils.initDatabse(getActivity().getApplicationContext());
 				return null;
 			}
-
-			return Math.max(seriesExp == null ? 0 : controller.getMaximumY(seriesExp),
-                    seriesInc == null ? 0 : controller.getMaximumY(seriesInc));
+            if (showedType == (TYPE_EXPENSES | TYPE_INCOME)) {
+                return Math.max(controller.getMaximumY(seriesExp), controller.getMaximumY(seriesInc));
+            } else if (showedType == TYPE_EXPENSES) {
+                return controller.getMaximumY(seriesExp);
+            } else if (showedType == TYPE_INCOME) {
+                return controller.getMaximumY(seriesInc);
+            }
+            return 0f;
 		}
 		
 		@Override
@@ -470,35 +475,22 @@ public class ChartFragment extends Fragment implements SeriesFragment.SeriesFrag
         public void onClick(View view) {
             int[] ids = {};
             boolean[] checks = {};
-            if (seriesInc != null && seriesExp != null) {
+            if (showedType == (TYPE_EXPENSES | TYPE_INCOME)) {
                 int[] incIds = seriesInc.getGroupsIds();
                 int[] expIds = seriesExp.getGroupsIds();
-                ids = new int[incIds.length + expIds.length];
-                for (int i = 0; i < expIds.length; i++) {
-                    ids[i] = expIds[i];
-                }
-                for (int i = 0; i < incIds.length; i++) {
-                    ids[i + expIds.length] = incIds[i];
-                }
+
                 boolean[] incChecks = seriesInc.getGroupsVisibility();
                 boolean[] expChecks = seriesExp.getGroupsVisibility();
-                checks = new boolean[incChecks.length + expChecks.length];
-                for (int i = 0; i < expChecks.length; i++) {
-                    checks[i] = expChecks[i];
-                }
-                for (int i = 0; i < incChecks.length; i++) {
-                    checks[i + expChecks.length] = incChecks[i];
-                }
+                showSeriesDialogFragment(expIds, expChecks, incIds, incChecks);
 
-            } else if (seriesExp != null) {
+            } else if ((showedType & TYPE_EXPENSES) == TYPE_EXPENSES) {
                 ids = seriesExp.getGroupsIds();
                 checks = seriesExp.getGroupsVisibility();
-            } else if (seriesInc != null) {
+                showSeriesDialogFragment(ids, checks, null, null);
+            } else if ( (showedType & TYPE_INCOME) == TYPE_INCOME) {
                 ids = seriesInc.getGroupsIds();
                 checks = seriesInc.getGroupsVisibility();
-            }
-            if (ids.length > 0 && checks.length > 0) {
-                showSeriesDialogFragment(ids, checks);
+                showSeriesDialogFragment(null, null, ids, checks);
             }
         }
     };
@@ -575,15 +567,21 @@ public class ChartFragment extends Fragment implements SeriesFragment.SeriesFrag
                 checks[i] = s.isVisible();
                 ids[i++] = s.getGroupId();
             }
-            showSeriesDialogFragment(ids, checks);
+            if ((showedType & TYPE_EXPENSES) == TYPE_EXPENSES) {
+                showSeriesDialogFragment(ids, checks, null, null);
+            } else if ((showedType & TYPE_INCOME) == TYPE_INCOME) {
+                showSeriesDialogFragment(null, null, ids, checks);
+            }
         }
     };
 
-    private void showSeriesDialogFragment(int[] ids, boolean[] checks) {
+    private void showSeriesDialogFragment(int[] eIds, boolean[] eChecks, int[] iIds, boolean[] iChecks) {
         SeriesFragment frag = new SeriesFragment();
         Bundle args = new Bundle();
-        args.putIntArray(SeriesFragment.GROUP_PARENT_IDS, ids);
-        args.putBooleanArray(SeriesFragment.INITIAL_CHECHKED_STATE, checks);
+        args.putIntArray(SeriesFragment.EXPENSES_GROUPS_IDS, eIds);
+        args.putBooleanArray(SeriesFragment.EXPENSES_CHECKED_STATE, eChecks);
+        args.putIntArray(SeriesFragment.INCOME_GROUPS_IDS, iIds);
+        args.putBooleanArray(SeriesFragment.INCOME_CHECKED_STATE, iChecks);
         frag.setArguments(args);
         frag.show(getChildFragmentManager(), getTag() + "#dialog");
     }
