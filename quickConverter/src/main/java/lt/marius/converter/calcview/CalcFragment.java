@@ -1,36 +1,5 @@
 package lt.marius.converter.calcview;
 
-import java.sql.SQLException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import static java.util.Calendar.*;
-import java.util.Date;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map.Entry;
-import java.util.Random;
-
-import com.j256.ormlite.dao.RuntimeExceptionDao;
-import com.j256.ormlite.stmt.QueryBuilder;
-
-import lt.marius.converter.R;
-import lt.marius.converter.curview.Currency;
-import lt.marius.converter.data.CurrencyProvider.IsoCode;
-import lt.marius.converter.groupview.GroupsController;
-import lt.marius.converter.transactions.CurrencyStored;
-import lt.marius.converter.transactions.TransactionsGroup;
-import lt.marius.converter.transactions.TransactionsGroupsController;
-import lt.marius.converter.transactions.TransactionsGroup.Type;
-import lt.marius.converter.user.UsersController;
-import lt.marius.converter.utils.DatabaseUtils;
-import lt.marius.converter.utils.GeneralUtils;
-import lt.marius.converter.utils.TouchClickListener;
-import lt.marius.converter.utils.UIUtils;
-import lt.marius.converter.views.EnhancedLinearLayout;
-import lt.marius.converter.views.EnhancedLinearLayout.EnhancedLayoutListener;
-import android.R.drawable;
 import android.app.DatePickerDialog;
 import android.app.DatePickerDialog.OnDateSetListener;
 import android.content.Context;
@@ -38,17 +7,13 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
-import android.view.ViewGroup.OnHierarchyChangeListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
@@ -58,6 +23,38 @@ import android.widget.EditText;
 import android.widget.HorizontalScrollView;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.j256.ormlite.dao.RuntimeExceptionDao;
+import com.j256.ormlite.stmt.QueryBuilder;
+
+import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map.Entry;
+
+import lt.marius.converter.R;
+import lt.marius.converter.curview.Currency;
+import lt.marius.converter.data.CurrencyProvider.IsoCode;
+import lt.marius.converter.groupview.GroupsController;
+import lt.marius.converter.transactions.CurrencyStored;
+import lt.marius.converter.transactions.TransactionsGroup;
+import lt.marius.converter.transactions.TransactionsGroup.Type;
+import lt.marius.converter.transactions.TransactionsGroupsController;
+import lt.marius.converter.user.UsersController;
+import lt.marius.converter.utils.DatabaseUtils;
+import lt.marius.converter.utils.GeneralUtils;
+import lt.marius.converter.utils.TouchClickListener;
+import lt.marius.converter.utils.UIUtils;
+import lt.marius.converter.views.EnhancedLinearLayout;
+import lt.marius.converter.views.EnhancedLinearLayout.EnhancedLayoutListener;
+
+import static java.util.Calendar.DAY_OF_MONTH;
+import static java.util.Calendar.MONTH;
+import static java.util.Calendar.YEAR;
 
 public class CalcFragment extends Fragment {
 
@@ -434,11 +431,13 @@ public class CalcFragment extends Fragment {
 		if ( selected ) {
 			tv.setTextAppearance(getActivity(), R.style.TextSelected);
 			tv.setTextColor(Color.WHITE);
-			if (g.getTypeEnum().equals(Type.EXPENSES)) {
-				tv.setBackgroundResource(R.drawable.expenses_selected_bg);
-			} else {
-				tv.setBackgroundResource(R.drawable.income_selected_bg);
-			}
+            tv.setBackgroundColor(UIUtils.getIndexedColor(g.getId()));
+
+//			if (g.getTypeEnum().equals(Type.EXPENSES)) {
+//				tv.setBackgroundResource(R.drawable.expenses_selected_bg);
+//			} else {
+//				tv.setBackgroundResource(R.drawable.income_selected_bg);
+//			}
 		} else {
 			tv.setTextColor(Color.parseColor("#E0E0E0"));
 			tv.setTextAppearance(getActivity(), R.style.TextNormal);

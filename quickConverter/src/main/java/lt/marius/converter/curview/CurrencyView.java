@@ -19,7 +19,6 @@ import android.view.animation.Animation;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
 import android.view.animation.TranslateAnimation;
-import android.view.inputmethod.EditorInfo;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.FrameLayout;
@@ -116,7 +115,7 @@ class CurrencyView implements OnClickListener, OnLongClickListener {
 		ViewGroup v = (ViewGroup) LayoutInflater.from(mContext).inflate(R.layout.fragment_currency_enter, null);
 		value = ((EditText)v.findViewById(R.id.edit_currency_value));
 		value.setHint(cur.getCurrencyTitle());
-		value.setImeOptions(EditorInfo.IME_ACTION_DONE);
+
 		flag = ((ImageView)v.findViewById(R.id.iv_country_flag));
 		flag.setImageBitmap(UIUtils.getFlagBitmap(mContext, cur.getShortCode()));
 		value.addTextChangedListener(textChangeListener);

@@ -18,6 +18,7 @@
 
         <EditText
             style="@style/EditText"
+            android:imeOptions="flagNoExtractUi"
             android:id="@+id/edit_value"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

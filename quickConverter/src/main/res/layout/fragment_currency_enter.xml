@@ -24,6 +24,7 @@
 
         <EditText
             style="@style/EditText"
+            android:imeOptions="flagNoExtractUi|actionDone"
             android:id="@+id/edit_currency_value"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -46,6 +47,7 @@
             android:layout_centerVertical="true"
             android:layout_toLeftOf="@+id/button_spend_value"
             android:scaleType="centerInside"
+            android:padding="0dp"
             android:src="@drawable/ic_income" />
 
         <ImageButton
@@ -56,6 +58,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:scaleType="centerInside"
+            android:padding="0dp"
             android:src="@drawable/ic_spend"
              />
     </RelativeLayout>

@@ -3,12 +3,14 @@
 
     <color name="holo_emphasis">#31b6e7</color>
 	<color name="default_text">#FAFAFA</color>
-    <color name="actionbar_background">#FF7F00</color>
+    <color name="default_color">#FF7F00</color>
+    <color name="actionbar_background">@color/default_color</color>
+    <color name="default_color_darker">#EE6E00</color>
     <color name="actionbar_text">#FEFEFE</color>
     <color name="primary_bright">#FEFEFE</color>
     <color name="primary_text">#de000000</color>
     <color name="tab_selected">#FF7F00</color>
-    <color name="tab_unselected">#EE6E00</color>
+    <color name="tab_unselected">@color/default_color_darker</color>
     <color name="tab_unselected_focused">@color/tab_selected</color>
     <color name="tab_selected_focused">@color/tab_selected</color>
     <color name="tab_unselected_pressed">@color/tab_selected</color>

@@ -58,7 +58,6 @@ public class SeriesFragment extends DialogFragment {
         // improve performance if you know that changes in content
         // do not change the size of the RecyclerView
         recycler.setHasFixedSize(true);
-
         // use a linear layout manager
         recycler.setLayoutManager(new LinearLayoutManager(getActivity()));
 

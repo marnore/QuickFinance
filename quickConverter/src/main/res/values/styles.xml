@@ -19,7 +19,22 @@
         <item name="actionMenuTextColor">@color/actionbar_text</item>
 
         <item name="android:fastScrollThumbDrawable">@drawable/fastscroll_thumb_holo</item>
+        <item name="sdlDialogStyle">@style/DialogStyleLight.Custom</item>
 
+
+    </style>
+
+    <style name="DialogStyleLight.Custom">
+        <!-- anything can be left out: -->
+        <item name="titleTextColor">@color/default_color</item>
+        <item name="titleSeparatorColor">@color/default_color_darker</item>
+        <item name="messageTextColor">@color/primary_text</item>
+        <item name="buttonTextColor">@color/primary_text</item>
+        <item name="buttonSeparatorColor">@color/default_color</item>
+        <item name="buttonBackgroundColorNormal">@color/primary_bright</item>
+        <item name="buttonBackgroundColorPressed">#668f8f8f</item>
+        <item name="buttonBackgroundColorFocused">#998f8f8f</item>
+        <!--<item name="dialogBackground">@drawable/dialog_background</item>-->
     </style>
 
     <!-- ActionBar styles -->
@@ -148,6 +163,8 @@
         <item name="textAllCaps">true</item>
         <item name="android:textSize">12sp</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
         <item name="android:background">@drawable/btn_flat</item>
     </style>
 

@@ -1,9 +1,5 @@
 package lt.marius.converter.views;
 
-import lt.marius.converter.R;
-import lt.marius.converter.utils.UIUtils;
-import lt.marius.converter.views.EditTextDialog.NoticeDialogListener;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -11,8 +7,12 @@ import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.text.InputType;
 import android.view.ViewGroup.LayoutParams;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+
+import lt.marius.converter.R;
+import lt.marius.converter.utils.UIUtils;
 
 public class EditTextDialog extends DialogFragment {
 	
@@ -66,6 +66,8 @@ public class EditTextDialog extends DialogFragment {
 		}
         LinearLayout layout = new LinearLayout(getActivity());
         final EditText edit = new EditText(getActivity());
+        edit.setTextAppearance(getActivity(), R.style.EditText);
+        edit.setImeOptions(edit.getImeOptions() | EditorInfo.IME_FLAG_NO_EXTRACT_UI);
         int p = UIUtils.dpToPx(10.f, getActivity());
         edit.setPadding(p, p, p, p);
         edit.setHint(hint);

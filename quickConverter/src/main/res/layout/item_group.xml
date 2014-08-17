@@ -20,7 +20,7 @@
         android:layout_toRightOf="@id/iv_group_icon"
         android:layout_marginLeft="@dimen/padding_large"
         />
-    <info.hoang8f.widget.FButton
+    <!--<info.hoang8f.widget.FButton
         android:id="@+id/button_subgroup_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,7 +35,17 @@
         fbutton:shadowEnabled="true"
         fbutton:shadowHeight="2dp"
         fbutton:cornerRadius="5dp"
-        />
+        />-->
+    <lt.marius.converter.views.CompatButton
+        style="@style/ButtonFlat"
+        android:background="@drawable/btn_raised"
+        android:id="@+id/button_subgroup_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:focusable="false"
+        android:text="@string/sub_group"/>
     <ImageView 
         android:id="@+id/iv_subgroup_remove"
         android:layout_width="wrap_content"

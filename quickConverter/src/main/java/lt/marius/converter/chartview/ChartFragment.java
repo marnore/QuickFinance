@@ -361,10 +361,17 @@ public class ChartFragment extends Fragment implements SeriesFragment.SeriesFrag
 	
 	private void updateInfoTexts(double income, double expenses) {
 		infoView.setText(MONTH_NAMES[month] + '\n' + year);
-		expensesInfoView.setText( 
-				String.format("%s %.2f%s", getString(R.string.expenses_short), expenses, getSymbol()));
-		incomeInfoView.setText(
-				String.format("%s %.2f%s", getString(R.string.income_short), income, getSymbol()));
+        if (UIUtils.getCurrRotation(getActivity()) == UIUtils.Rotation.LANDSCAPE) {
+            expensesInfoView.setText(
+                    String.format("%s\n%.2f%s", getString(R.string.expenses_short), expenses, getSymbol()));
+            incomeInfoView.setText(
+                    String.format("%s\n%.2f%s", getString(R.string.income_short), income, getSymbol()));
+        } else {
+            expensesInfoView.setText(
+                    String.format("%s %.2f%s", getString(R.string.expenses_short), expenses, getSymbol()));
+            incomeInfoView.setText(
+                    String.format("%s %.2f%s", getString(R.string.income_short), income, getSymbol()));
+        }
 	}
 	
 	private void disableButtons() {
@@ -410,22 +417,27 @@ public class ChartFragment extends Fragment implements SeriesFragment.SeriesFrag
 			
 			try {
                 seriesExp = seriesInc = null;
-
-                seriesExp = new CombinedSeries2D(
-                        controller.getDailyExpenses(month, year, showedCurrency, null));
-                seriesInc = new CombinedSeries2D(
-                        controller.getDailyIncome(month, year, showedCurrency, null));
+                if (controller != null) {
+                    seriesExp = new CombinedSeries2D(
+                            controller.getDailyExpenses(month, year, showedCurrency, null));
+                    seriesInc = new CombinedSeries2D(
+                            controller.getDailyIncome(month, year, showedCurrency, null));
+                }
 			} catch (IllegalStateException ex) {
-				DatabaseUtils.closeDatabase();
-				DatabaseUtils.initDatabse(getActivity().getApplicationContext());
+                try {
+                    DatabaseUtils.closeDatabase();
+                    DatabaseUtils.initDatabse(getActivity().getApplicationContext());
+                } catch (Exception e) {}
 				return null;
 			}
-            if (showedType == (TYPE_EXPENSES | TYPE_INCOME)) {
-                return Math.max(controller.getMaximumY(seriesExp), controller.getMaximumY(seriesInc));
-            } else if (showedType == TYPE_EXPENSES) {
-                return controller.getMaximumY(seriesExp);
-            } else if (showedType == TYPE_INCOME) {
-                return controller.getMaximumY(seriesInc);
+            if (controller != null) {
+                if (showedType == (TYPE_EXPENSES | TYPE_INCOME)) {
+                    return Math.max(controller.getMaximumY(seriesExp), controller.getMaximumY(seriesInc));
+                } else if (showedType == TYPE_EXPENSES) {
+                    return controller.getMaximumY(seriesExp);
+                } else if (showedType == TYPE_INCOME) {
+                    return controller.getMaximumY(seriesInc);
+                }
             }
             return 0f;
 		}
@@ -515,6 +527,7 @@ public class ChartFragment extends Fragment implements SeriesFragment.SeriesFrag
     	
 		@Override
 		protected Float doInBackground(Void... params) {
+            if (controller == null) return 0f;
 			try {
 				if ((showedType & TYPE_EXPENSES) == TYPE_EXPENSES) {
 					sp = controller.getMonthlyExpenses(month, year, showedCurrency);
@@ -522,8 +535,10 @@ public class ChartFragment extends Fragment implements SeriesFragment.SeriesFrag
 					sp = controller.getMonthlyIncome(month, year, showedCurrency);
 				}
 			} catch (IllegalStateException ex) {
-				DatabaseUtils.closeDatabase();
-				DatabaseUtils.initDatabse(getActivity().getApplicationContext());
+                try {
+                    DatabaseUtils.closeDatabase();
+                    DatabaseUtils.initDatabse(getActivity().getApplicationContext());
+                } catch (Exception e) {}
 				return null;
 			}
 			return Float.valueOf(0);
