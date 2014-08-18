@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">快易记</string>
+    <string name="menu_settings">设置</string>
+    <string name="menu_export_db">备份资料输出</string>
+    <string name="menu_import_db">备份资料输入</string>
+    <string name="save_before_replace">此步骤将覆盖当前数据 前往下一步之前保存当前记录</string>
+    <string name="attention">注意</string>
+    <string name="yes">同意</string>
+    <string name="no">不接受</string>
+    <string name="menu_search">查找</string>
+    <string name="menu_show_line_chart">显示折线图</string>
+    <string name="menu_show_pie_chart">显示饼状图</string>
+    <string name="menu_curr_list">当前货币</string>
+    <string name="menu_update_currencies">更新当前货币</string>
+    <string name="title_activity_main">快易记</string>
+    <string name="pick_group_title">输入新的数据：</string>
+    <string name="add_subgroup">创建</string>
+    <string name="cancel">取消</string>
+    <string name="group_title">小组名称</string>
+    <string name="choose_currency_for_chart">显示数据将使用哪种货币？</string>
+
+    <string name="error_no_internet_on_startup">在使用第一次之前请确保您有网络连接。连接到网络或者重试。</string>
+    <string name="error_download_failed">原始文件下载失败。请重新启动软件。</string>
+    <string name="error_group_exists">群组已存在。选择其它组名</string>
+    <string name="error_backup_db">数据未被储存。您的设备没有足够空间（或未插入SD卡）。</string>
+    <string name="success_backup_db">数据已储存到数据库 %1$s</string>
+    <string name="ok">确定</string>
+    <string name="please_add_currencies">点击此处选择需要的货币</string>
+
+    <string name="tab_currencies">财务</string>
+    <string name="tab_statistics">数据统计</string>
+    <string name="tab_groups">组别</string>
+    <string name="tab_history">历史</string>
+    <string name="tab_calculator">计算器</string>
+    <string name="tab_user_currencies">我的货币</string>
+    <string name="tab_all_currencies">所有货币</string>
+    <string name="sub_group">小组</string>
+    <string name="search_currency">查找货币…</string>
+
+    <string name="income">收入</string>
+    <string name="expenses">支出</string>
+
+    <string name="select_db_to_import">选用那个数据库？</string>
+    <string name="no_items_found">无对应项目</string>
+
+    <string name="legend">图例</string>
+    <string name="chart_prev">上一页</string>
+    <string name="chart_next">下一页</string>
+
+    <string name="added_income">收到的收入 %1$.2f %2$s %3$s</string>
+    <string name="added_expenses">花费 %1$.2f %2$s %3$s</string>
+    <string name="expenses_short">支出.</string>
+    <string name="income_short">收入.</string>
+
+    <string name="choose_your_currencies">选择你所需要的币种</string>
+    <string name="save_changes">保存更改</string>
+
+    <string name="dialog_delete">删除</string>
+    <string name="dialog_cancel">取消</string>
+    <string name="dialog_edit_history_title">编辑历史记录</string>
+
+    <string name="date_from">自：</string>
+    <string name="date_to">到：</string>
+    <string name="select_groups">选择组别</string>
+
+    <string name="showcase_currencies">点击这里下载以选择你所需要的币种</string>
+</resources>

@@ -3,6 +3,7 @@ package lt.marius.converter.groupview;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,7 +25,7 @@ import lt.marius.converter.utils.UIUtils;
 import lt.marius.converter.views.EditTextDialog;
 import lt.marius.converter.views.EditTextDialog.NoticeDialogListener;
 
-public class GroupsController {
+public class GroupsController implements NoticeDialogListener {
 	
 	
 	private List<GroupView> views;
@@ -113,11 +114,16 @@ public class GroupsController {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (manager != null) {
                     pendingGroup = views.get(position).getModel();
+                    fragment.setPendingGroup(pendingGroup);
                     dialog = new EditTextDialog();
-                    dialog.setParameters(context.getString(R.string.pick_group_title),
-                            context.getString(R.string.group_title), pendingGroup.getName());
-                    dialog.setListener(editDialogListener);
+                    Bundle args = new Bundle();
+                    args.putString(EditTextDialog.MODE, EditTextDialog.MODE_EDIT);
+                    args.putString(EditTextDialog.TITLE, context.getString(R.string.pick_group_title));
+                    args.putString(EditTextDialog.HINT, context.getString(R.string.group_title));
+                    args.putString(EditTextDialog.VALUE, pendingGroup.getName());
+                    dialog.setArguments(args);
                     dialog.show(manager, "EditTextDialog");
+//                    dialogListener = editDialogListener;
                 }
 
             }
@@ -180,8 +186,10 @@ public class GroupsController {
 	}
 	
 	private FragmentManager manager;
-	public void setFragmentManager(FragmentManager fragmentManager) {
+    private GroupFragment fragment;
+	public void setFragmentManager(GroupFragment fragment, FragmentManager fragmentManager) {
 		manager = fragmentManager;
+        this.fragment = fragment;
 	}
 	
 	private int findViewPosition(TransactionsGroup group) {
@@ -195,12 +203,32 @@ public class GroupsController {
 		return -1;
 	}
 
-	/* UI Callback methods */
+    @Override
+    public void onDialogPositiveClick(EditTextDialog dialog, String text) {
+        if (dialog.getMode() == EditTextDialog.MODE_EDIT) {
+            editDialogListener.onDialogPositiveClick(dialog, text);
+        } else {
+            createDialogListener.onDialogPositiveClick(dialog, text);
+        }
+    }
+
+
+    @Override
+    public void onDialogNegativeClick(EditTextDialog dialog) {
+        if (dialog.getMode() == EditTextDialog.MODE_EDIT) {
+            editDialogListener.onDialogNegativeClick(dialog);
+        } else {
+            createDialogListener.onDialogNegativeClick(dialog);
+        }
+    }
+
+    /* UI Callback methods */
 	private TransactionsGroup pendingGroup;
-	private NoticeDialogListener dialogListener = new NoticeDialogListener() {
+//    private NoticeDialogListener dialogListener = null;
+	private NoticeDialogListener createDialogListener = new NoticeDialogListener() {
 		
 		@Override
-		public void onDialogPositiveClick(String text) {
+		public void onDialogPositiveClick(EditTextDialog dialog, String text) {
 			if (text.length() == 0) {
 				pendingGroup = null;
 				return;
@@ -233,28 +261,35 @@ public class GroupsController {
 			}
 			listAdapter.notifyDataSetChanged();
 			pendingGroup = null;
+            fragment.setPendingGroup(null);
+            dialog.dismiss();
 		}
 		
 		@Override
-		public void onDialogNegativeClick() {
-			pendingGroup = null;
-		}
+		public void onDialogNegativeClick(EditTextDialog dialog) {
+            pendingGroup = null;
+            fragment.setPendingGroup(null);
+        }
 	};
 
     private NoticeDialogListener editDialogListener = new NoticeDialogListener() {
 
         @Override
-        public void onDialogPositiveClick(String text) {
+        public void onDialogPositiveClick(EditTextDialog dialog, String text) {
             if (pendingGroup != null) {
                 pendingGroup.setName(text);
                 TransactionsGroupsController.getInstance().saveChanges(pendingGroup);
                 if (listAdapter != null) listAdapter.notifyDataSetChanged();
+                pendingGroup = null;
+                fragment.setPendingGroup(null);
+                dialog.dismiss();
             }
         }
 
         @Override
-        public void onDialogNegativeClick() {
-
+        public void onDialogNegativeClick(EditTextDialog dialog) {
+            pendingGroup = null;
+            fragment.setPendingGroup(null);
         }
     };
 	
@@ -262,17 +297,24 @@ public class GroupsController {
 	public void onSubGroupAdd(TransactionsGroup group) {
 		if (manager != null) {
 			pendingGroup = group;
+            fragment.setPendingGroup(pendingGroup);
 			dialog = new EditTextDialog();
-			dialog.setParameters(context.getString(R.string.pick_group_title),
-					context.getString(R.string.group_title));
-			dialog.setListener(dialogListener);
+            Bundle args = new Bundle();
+            args.putString(EditTextDialog.MODE, EditTextDialog.MODE_CREATE);
+            args.putString(EditTextDialog.TITLE, context.getString(R.string.pick_group_title));
+            args.putString(EditTextDialog.HINT, context.getString(R.string.group_title));
+            dialog.setArguments(args);
 			dialog.show(manager, "EditTextDialog");
+//            dialogListener = createDialogListener;
 		}
 	}
 	
 	public void onSubGroupRemove(TransactionsGroup group) {
 		removeGroup(group);
 	}
-	
-	
+
+
+    public void setPendingGroup(TransactionsGroup pendingGroup) {
+        this.pendingGroup = pendingGroup;
+    }
 }

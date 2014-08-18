@@ -30,7 +30,7 @@
         <item name="titleSeparatorColor">@color/default_color_darker</item>
         <item name="messageTextColor">@color/primary_text</item>
         <item name="buttonTextColor">@color/primary_text</item>
-        <item name="buttonSeparatorColor">@color/default_color</item>
+        <item name="buttonSeparatorColor">#668f8f8f</item>
         <item name="buttonBackgroundColorNormal">@color/primary_bright</item>
         <item name="buttonBackgroundColorPressed">#668f8f8f</item>
         <item name="buttonBackgroundColorFocused">#998f8f8f</item>
