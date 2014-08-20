@@ -25,6 +25,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import eu.inmite.android.lib.dialogs.BaseDialogFragment;
+import eu.inmite.android.lib.dialogs.SimpleDialogFragment;
 import lt.marius.converter.R;
 import lt.marius.converter.transactions.TransactionsGroup;
 import lt.marius.converter.utils.DatabaseUtils;
@@ -33,7 +35,7 @@ import lt.marius.converter.utils.DividerItemDecoration;
 /**
  * Created by marius on 8/2/14.
  */
-public class SeriesFragment extends DialogFragment {
+public class SeriesFragment extends SimpleDialogFragment {
 
 
     public static final String EXPENSES_GROUPS_IDS = "EXPENSES_GROUPS_IDS";
@@ -51,7 +53,7 @@ public class SeriesFragment extends DialogFragment {
     private RecyclerView recycler;
     private ItemsAdapter mAdapter;
 
-    private View buildView(LayoutInflater inflater, @Nullable Bundle savedInstanceState) {
+    private View buildView(LayoutInflater inflater) {
         ViewGroup layout = (ViewGroup) inflater.inflate(R.layout.fragment_series, null, false);
         recycler = (RecyclerView) layout.findViewById(R.id.recyclerView);
 
@@ -112,6 +114,16 @@ public class SeriesFragment extends DialogFragment {
         }
         recycler.setAdapter(mAdapter);
 
+        //get the height in a hacky way
+        ItemsAdapter.ViewHolder holder = mAdapter.onCreateViewHolder(layout, 0);
+        mAdapter.bindViewHolder(holder, 0);
+        View v = holder.view;
+        v.measure(
+                View.MeasureSpec.makeMeasureSpec(ViewGroup.LayoutParams.MATCH_PARENT, View.MeasureSpec.EXACTLY),
+                View.MeasureSpec.makeMeasureSpec(ViewGroup.LayoutParams.WRAP_CONTENT, View.MeasureSpec.EXACTLY));
+        int height = v.getMeasuredHeight();
+        recycler.setMinimumHeight(height * mAdapter.getItemCount());
+
         if (getParentFragment() instanceof SeriesFragmentCallback) {
             listener = (SeriesFragmentCallback) getParentFragment();
             mAdapter.setListener(listener);
@@ -120,25 +132,43 @@ public class SeriesFragment extends DialogFragment {
         return layout;
     }
 
+
+
     @Override
-    public Dialog onCreateDialog(Bundle savedInstanceState) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+    protected Builder build(Builder builder) {
+        builder.setView(buildView(LayoutInflater.from(getActivity())));
 
-        builder.setView(buildView(LayoutInflater.from(getActivity()), savedInstanceState));
-
-        builder.setNeutralButton(R.string.ok, new DialogInterface.OnClickListener() {
+        builder.setNeutralButton(R.string.ok, new View.OnClickListener() {
 
             @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
+            public void onClick(View v) {
+                dismiss();
             }
         });
 
         builder.setTitle(R.string.legend);
-        builder.setCancelable(true);
-
-        return builder.create();
+        return builder;
     }
+
+    //    @Override
+//    public Dialog onCreateDialog(Bundle savedInstanceState) {
+//        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+//
+//        builder.setView(buildView(LayoutInflater.from(getActivity()), savedInstanceState));
+//
+//        builder.setNeutralButton(R.string.ok, new DialogInterface.OnClickListener() {
+//
+//            @Override
+//            public void onClick(DialogInterface dialog, int which) {
+//                dialog.dismiss();
+//            }
+//        });
+//
+//        builder.setTitle(R.string.legend);
+//        builder.setCancelable(true);
+//
+//        return builder.create();
+//    }
 
 
     private SeriesFragmentCallback listener;

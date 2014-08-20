@@ -3,6 +3,8 @@ package lt.marius.converter.views;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.InputType;
+import android.util.AttributeSet;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.view.inputmethod.EditorInfo;
@@ -86,14 +88,12 @@ public class EditTextDialog extends SimpleDialogFragment {
 //            title = savedInstanceState.getString("title");
 //        }
         LinearLayout layout = new LinearLayout(getActivity());
-        final EditText edit = new EditText(getActivity());
-        edit.setTextAppearance(getActivity(), R.style.EditText);
+        final EditText edit = (EditText)LayoutInflater.from(getActivity()).inflate(R.layout.styled_edit_text, null, false);
         edit.setImeOptions(edit.getImeOptions() | EditorInfo.IME_FLAG_NO_EXTRACT_UI);
         int p = UIUtils.dpToPx(10.f, getActivity());
         edit.setPadding(p, p, p, p);
         edit.setHint(hint);
         edit.setText(value);
-        edit.setTextAppearance(getActivity(), R.style.EditText);
         edit.setInputType(InputType.TYPE_TEXT_FLAG_CAP_WORDS);
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                 LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
