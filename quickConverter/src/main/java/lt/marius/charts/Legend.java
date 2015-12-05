@@ -110,7 +110,7 @@ public class Legend extends LinearLayout {
 			case MotionEvent.ACTION_UP:
 				if (canClick) {
 					float dist = (event.getX() - sx) * (event.getX() - sx) + (event.getY() - sy) * (event.getY() - sy);
-					dist = FloatMath.sqrt(dist);
+					dist = (float)Math.sqrt(dist);
 					if (dist <= CLICK_AREA_THRESHOLD) {
 						onClick(v);
 						if (currentapiVersion < android.os.Build.VERSION_CODES.HONEYCOMB){

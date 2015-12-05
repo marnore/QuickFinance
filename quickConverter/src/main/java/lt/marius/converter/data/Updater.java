@@ -17,7 +17,7 @@ import lt.marius.converter.utils.DatabaseUtils;
 public class Updater {
 
 	public static int USER_CURR_UPDATE_INTERVAL = 12 * 60 * 60 * 1000;			//12 hours in ms
-	public static int OTHER_CURR_UPDATE_INTERVAL = 2 * 24 * 60 * 60 * 1000;		//every 2 days
+	public static int OTHER_CURR_UPDATE_INTERVAL = 2;// * 24 * 60 * 60 * 1000;		//every 2 days
 	
 	public static void checkUpdate(Context c) {
 		if (!DatabaseUtils.isInitialized()) {
@@ -26,8 +26,8 @@ public class Updater {
 		List<Currency> userCurrs = UsersController.getInstance().getUserCurrencies(null);
 		final int userCurrCount = userCurrs.size();
 		final CurrencyProvider provider = new CurrencyProvider(c, Currency.BASE_CURRENCY);
-		if (userCurrCount > 0 &&
-			(new Date().getTime() - userCurrs.get(0).getLastUpdated().getTime()) > USER_CURR_UPDATE_INTERVAL) {
+		if (userCurrCount > 0 && (userCurrs.get(0).getLastUpdated() == null ||
+			(new Date().getTime() - userCurrs.get(0).getLastUpdated().getTime()) > USER_CURR_UPDATE_INTERVAL)) {
 			provider.updateCurrencies(userCurrs, new CurrencyUpdatedListener() {
 				int count = 0;
 				@Override
@@ -62,6 +62,23 @@ public class Updater {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+
+	public static void forceUpdateCurrencies(Context c) {
+		if (!DatabaseUtils.isInitialized()) {
+			return;
+		}
+		RuntimeExceptionDao<Currency, Integer> dao = DatabaseUtils.getHelper().getCachedDao(Currency.class);
+		final CurrencyProvider provider = new CurrencyProvider(c, Currency.BASE_CURRENCY);
+
+		List<Currency> updateList = dao.queryForAll();
+		provider.updateCurrencies(updateList, new CurrencyUpdatedListener() {
+
+			@Override
+			public void onCurrencyUpdated(Currency cur) {
+				Log.i("Updater", "Updated currency " + cur);
+			}
+		});
 	}
 	
 }

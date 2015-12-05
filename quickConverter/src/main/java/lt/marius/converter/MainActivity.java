@@ -456,7 +456,8 @@ public class MainActivity extends ActionBarActivity implements NetworkStateListe
 				new Thread("Currencies Update Thread") {
 					@Override
 					public void run() {
-						Updater.checkUpdate(getApplicationContext());
+						Updater.forceUpdateCurrencies(getApplicationContext());
+						//Updater.checkUpdate(getApplicationContext());
 						updateRunning.set(false);
 					}
 				}.start();

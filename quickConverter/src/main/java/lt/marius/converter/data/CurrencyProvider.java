@@ -21,7 +21,7 @@ public class CurrencyProvider {
 	
 	public static final int THREAD_POOL_SIZE = 1;
 	
-	public static enum IsoCode {
+	public enum IsoCode {
 		AED("AED", "د.إ"),
 		ANG("ANG", "ƒ"),
 		ARS("ARS", "$"),
@@ -150,7 +150,7 @@ public class CurrencyProvider {
 	public CurrencyProvider(Context c, Currency baseCurrency) {
 		mResources = c.getResources();
 		mBaseCurrency = baseCurrency;
-		currApi = new TheMoneyConverterCurrencyAPI();
+		currApi = new LBCurrencyAPI();
 		currencyDao = DatabaseUtils.getHelper().getCachedDao(Currency.class);
 	}
 	
@@ -193,6 +193,8 @@ public class CurrencyProvider {
 				public Currency call() {
 					Currency c = currApi.getCurrencyValue(mBaseCurrency.getShortCode(), curr.getShortCode());
 					curr.updateValue(c.getCurrency());
+					curr.setCurrencyTitle(c.getCurrencyTitle());
+
 					currencyDao.update(curr);
 					return curr;
 				}

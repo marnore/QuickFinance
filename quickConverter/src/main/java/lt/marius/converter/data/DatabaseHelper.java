@@ -6,11 +6,14 @@ import android.database.sqlite.SQLiteDatabase;
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.RuntimeExceptionDao;
+import com.j256.ormlite.stmt.DeleteBuilder;
+import com.j256.ormlite.stmt.Where;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
 
 import java.io.File;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -23,6 +26,7 @@ import lt.marius.converter.transactions.CurrencyStored;
 import lt.marius.converter.transactions.TransactionsGroup;
 import lt.marius.converter.user.User;
 import lt.marius.converter.user.UserCurrencies;
+import lt.marius.converter.utils.DatabaseUtils;
 
 /**
  * Database helper class used to manage the creation and upgrading of your database. This class also usually provides
@@ -33,10 +37,13 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 	// name of the database file for your application -- change to something appropriate for your app
 	public static final String DATABASE_NAME = "mydatabase.db";
 	// any time you make changes to your database objects, you may have to increase the database version
-	private static final int DATABASE_VERSION = 7;
-	
+	private static final int DATABASE_VERSION = 8;
+
+    private Context context;
+
 	public DatabaseHelper(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION/*, R.raw.ormlite_config*/);
+        this.context = context;
 	}
 
 	/**
@@ -101,6 +108,59 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 				if (f.exists()) f.delete();
 			}
 		}
+		if (oldVersion < 8) {
+
+
+            CurrencyAPI oldApi = new TheMoneyConverterCurrencyAPI();
+            CurrencyAPI newApi = new LBCurrencyAPI();
+            IsoCode[] codes = newApi.getSupportedIsoCodes();
+            List<String> toRemove = new ArrayList<>();
+            for (IsoCode oldCode : oldApi.getSupportedIsoCodes()) {
+                boolean found = false;
+                for (int i = 0; i < codes.length; i++) {
+                    if (codes[i].getName().equals(oldCode.getName())) {
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found) {
+                    toRemove.add(oldCode.getName());
+                }
+            }
+
+            try {
+                RuntimeExceptionDao<Currency, Integer> dao = getCachedDao(Currency.class);
+                Where<Currency, Integer> where = dao.queryBuilder().where();
+                where.in(Currency.CURRENCY_CODE_SHORT, toRemove);
+
+                List<Currency> toBeRemoved = dao.queryBuilder().where().in(Currency.CURRENCY_CODE_SHORT, toRemove).query();
+                List<Integer> toBeRemovedIds = new ArrayList<>();
+                for (Currency c : toBeRemoved) {
+                    toBeRemovedIds.add(c.getId());
+                }
+
+                RuntimeExceptionDao<UserCurrencies, Integer> usersDao = getCachedDao(UserCurrencies.class);
+                Where<UserCurrencies, Integer> usersWhere = usersDao.queryBuilder().where();
+                usersWhere.in(UserCurrencies.COLUMN_CURRENCY, toBeRemovedIds);
+                DeleteBuilder<UserCurrencies, Integer> usersDeleteBuilder = usersDao.deleteBuilder();
+                usersDeleteBuilder.setWhere(usersWhere);
+                int removedUserCurrencies = usersDeleteBuilder.delete();
+                System.out.println("Removed user currencies " + removedUserCurrencies);
+
+                DeleteBuilder<Currency, Integer> deleteBuilder = dao.deleteBuilder();
+                deleteBuilder.setWhere(where);
+                int removedCurrencies = deleteBuilder.delete();
+                System.out.println("Removed currencies " + removedCurrencies);
+                new Thread() {
+                    @Override
+                    public void run() {
+                        Updater.forceUpdateCurrencies(context);
+                    }
+                }.start();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
 	}
 
 	Map<Class<?>, Object> cache = new HashMap<Class<?>, Object>();

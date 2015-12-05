@@ -72,7 +72,7 @@ public class Currency {
 	 * @return amount of money in base currency
 	 */
 	public BigDecimal getValue(BigDecimal amount) {
-		return amount.multiply(currency);
+		return currency != null ? amount.multiply(currency) : BigDecimal.ZERO;
 	}
 	
 	/**
@@ -103,7 +103,7 @@ public class Currency {
 	
 	@Override
 	public String toString() {
-		return currencyTitle + "(" + currencyCodeShort + ")" + "  " + currency.toPlainString();
+		return currencyTitle + "(" + currencyCodeShort + ")" + "  " + (currency != null ? currency.toPlainString(): "null");
 	}
 	
 	@Override

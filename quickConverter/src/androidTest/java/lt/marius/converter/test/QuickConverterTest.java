@@ -15,7 +15,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 
-import com.robotium.solo.Solo;
+//import com.robotium.solo.Solo;
 
 public class QuickConverterTest extends ActivityInstrumentationTestCase2<MainActivity> {
 
@@ -23,11 +23,11 @@ public class QuickConverterTest extends ActivityInstrumentationTestCase2<MainAct
 		super(MainActivity.class);
 	}
 
-	private Solo solo;
+//	private Solo solo;
 	
 	@Override
 	protected void setUp() throws Exception {
-		solo = new Solo(getInstrumentation(), getActivity());
+//		solo = new Solo(getInstrumentation(), getActivity());
 	}
 	
 	
@@ -48,36 +48,36 @@ public class QuickConverterTest extends ActivityInstrumentationTestCase2<MainAct
 //			}
 //		});
 		
-		ClickListener<TextView> textClickListener = new ClickListener<TextView>() {
-
-			@Override
-			public String getText(TextView view) {
-				return view.getText().toString();
-			}
-
-			@Override
-			public void setText(TextView view, String text) {
-				view.setText(text);
-			}
-			
-		};
-		
-		for (final View v : solo.getCurrentViews()) {
-			if (v.getClass().equals(TextView.class)) {
-				v.setOnClickListener(textClickListener);
-				handler.post(new Runnable() {
-					
-					@Override
-					public void run() {
-						v.setBackgroundColor(Color.parseColor("#80FF0000"));
-					}
-				});
-			}
-		}
+//		ClickListener<TextView> textClickListener = new ClickListener<TextView>() {
+//
+//			@Override
+//			public String getText(TextView view) {
+//				return view.getText().toString();
+//			}
+//
+//			@Override
+//			public void setText(TextView view, String text) {
+//				view.setText(text);
+//			}
+//
+//		};
+//
+//		for (final View v : solo.getCurrentViews()) {
+//			if (v.getClass().equals(TextView.class)) {
+//				v.setOnClickListener(textClickListener);
+//				handler.post(new Runnable() {
+//
+//					@Override
+//					public void run() {
+//						v.setBackgroundColor(Color.parseColor("#80FF0000"));
+//					}
+//				});
+//			}
+//		}
 //		solo.waitForText("12345", 1, 20000);
-		synchronized(solo) {
-			solo.wait();
-		}
+//		synchronized(solo) {
+//			solo.wait();
+//		}
 		
 //		ht = new HandlerThread("runner");
 //		ht.start();
@@ -193,7 +193,7 @@ public class QuickConverterTest extends ActivityInstrumentationTestCase2<MainAct
 	
 	@Override
 	protected void tearDown() throws Exception {
-		solo.finishOpenedActivities();
+//		solo.finishOpenedActivities();
 	}
 	
 }

@@ -573,7 +573,7 @@ public class ChartFragment extends Fragment implements SeriesFragment.SeriesFrag
     private OnClickListener pieClickListener = new OnClickListener() {
         @Override
         public void onClick(View view) {
-            if (sp == null) return;
+            if (sp == null || sp.isEmpty()) return;
 
             int[] ids = new int[sp.size()];
             boolean[] checks = new boolean[sp.size()];
@@ -591,6 +591,9 @@ public class ChartFragment extends Fragment implements SeriesFragment.SeriesFrag
     };
 
     private void showSeriesDialogFragment(int[] eIds, boolean[] eChecks, int[] iIds, boolean[] iChecks) {
+		if (eIds != null && eIds.length == 0 || iIds != null && iIds.length == 0) {
+			return;
+		}
         SeriesFragment frag = new SeriesFragment();
         Bundle args = new Bundle();
         args.putIntArray(SeriesFragment.EXPENSES_GROUPS_IDS, eIds);

@@ -4,13 +4,13 @@ android {
     compileSdkVersion 19
     buildToolsVersion '19.1.0'
     defaultConfig {
-        applicationId 'lt.marius.pinchtoclose'
+        //applicationId 'lt.marius.pinchtoclose'
         minSdkVersion 8
         targetSdkVersion 20
     }
     buildTypes {
         release {
-            runProguard false
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }

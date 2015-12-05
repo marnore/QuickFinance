@@ -23,9 +23,6 @@ import javax.net.ssl.SSLSession;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
-
 
 public class NetworkUtils {
 	
@@ -94,22 +91,22 @@ public class NetworkUtils {
 	private static HttpURLConnection getConnection(URL url) {
 		HttpURLConnection conn = null;
 		try {
-		if (url.getProtocol().toLowerCase().equals("https")) {
-			trustAllHosts();
-            HttpsURLConnection https = (HttpsURLConnection) url.openConnection();
-            https.setHostnameVerifier(DO_NOT_VERIFY);
-            conn = https;
-		} else {
-			conn = (HttpURLConnection)url.openConnection();
-		}
+			if (url.getProtocol().toLowerCase().equals("https")) {
+				trustAllHosts();
+				HttpsURLConnection https = (HttpsURLConnection) url.openConnection();
+				https.setHostnameVerifier(DO_NOT_VERIFY);
+				conn = https;
+			} else {
+				conn = (HttpURLConnection)url.openConnection();
+			}
 		} catch (IOException ex) {}
 		
 		try {
-			conn.setRequestMethod(HttpPost.METHOD_NAME);
+			if (conn != null) conn.setRequestMethod("POST");
 		} catch (ProtocolException e) {
 			e.printStackTrace();
 		}
-		conn.setDoInput(true);
+		if (conn != null) conn.setDoInput(true);
 		return conn;
 	}
 
@@ -125,7 +122,7 @@ public class NetworkUtils {
 		BufferedReader read = null;
 		try {
 			conn = getConnection(new URL(fileUrl));
-			conn.setRequestMethod(HttpGet.METHOD_NAME);
+			conn.setRequestMethod("GET");
 //			conn.setDoInput(true);
 //			conn.setDoOutput(true);
 			conn.connect();

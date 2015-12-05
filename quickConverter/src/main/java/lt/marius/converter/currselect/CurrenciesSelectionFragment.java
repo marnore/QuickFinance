@@ -25,6 +25,7 @@ import com.j256.ormlite.dao.RuntimeExceptionDao;
 
 import java.math.BigDecimal;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -82,8 +83,12 @@ public class CurrenciesSelectionFragment extends DialogFragment implements CurrS
 		}
 		
 		currDao = DatabaseUtils.getHelper().getCachedDao(Currency.class);
-		allCurrencies = currDao.queryForAll();
-		
+		try {
+			allCurrencies = currDao.queryBuilder().orderBy(Currency.CURRENCY_NAME, true).query();
+		} catch (SQLException e) {
+			allCurrencies = new ArrayList<>();
+		}
+
 		appContext = inflater.getContext().getApplicationContext();
 		View view = inflater.inflate(R.layout.fragment_curr_list, container, false);
 		listView = (ListView) view.findViewById(R.id.drag_sort_list);
@@ -274,12 +279,16 @@ public class CurrenciesSelectionFragment extends DialogFragment implements CurrS
 	@Override
 	public void onSearchQuery(String query) {
 		if (query.length() == 0) {
-			allCurrencies = currDao.queryForAll();
-			adapter.notifyDataSetChanged();
+            try {
+                allCurrencies = currDao.queryBuilder().orderBy(Currency.CURRENCY_NAME, true).query();
+            } catch (SQLException ignore) {
+            }
+            adapter.notifyDataSetChanged();
 		} else {
 			try {
 				String q = "%" + query + "%";
 				allCurrencies = currDao.queryBuilder()
+                        .orderBy(Currency.CURRENCY_NAME, true)
 						.where().like(Currency.CURRENCY_NAME, q)
 						.or().like(Currency.CURRENCY_CODE_SHORT, q)
 						.query();

@@ -171,8 +171,11 @@ class CurrencyController implements OnValueChangeListener, OnValueStoredListener
 			for (int i = 0, n = mViews.size(); i < n; i++) {
 				v = mViews.get(i);
 				if (v == view) continue;
-				BigDecimal d = dd.divide(mModels.get(i).getCurrency(), 20, RoundingMode.UP);
-				v.updateValue(d.doubleValue());
+				Currency c = mModels.get(i);
+				if (c != null && c.getCurrency() != null && !c.getCurrency().equals(BigDecimal.ZERO)) {
+					BigDecimal d = dd.divide(c.getCurrency(), 20, RoundingMode.UP);
+					v.updateValue(d.doubleValue());
+				}
 			}
 			mLastValue = newValue;	//save entered value for future updates
 			mLastUpdatedView  = view;
